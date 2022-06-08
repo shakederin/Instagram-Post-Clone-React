@@ -25,7 +25,10 @@ module.exports = {
     },
     plugins: [
         new StylableWebpackPlugin({ stcConfig: true }),
-        new HtmlWebpackPlugin({ title: 'Stylable App' }),
+        new HtmlWebpackPlugin({
+            title: 'Instagram Post Clone',
+            favicon: './src/components/assets/instagram-logo.svg',
+        }),
     ],
     cache: { type: 'filesystem' },
 };

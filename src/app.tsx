@@ -1,6 +1,6 @@
 import type React from 'react';
-import { st, classes } from './app.st.css';
-import { Header } from './header';
+import { st, classes } from './components/style/main.st.css';
+import InstagramPost from './components/Instagran-post';
 
 export interface AppProps {
     className?: string;
@@ -9,7 +9,7 @@ export interface AppProps {
 export const App: React.FC<AppProps> = ({ className }) => {
     return (
         <main className={st(classes.root, className)}>
-            <Header className={classes.header} />
+            <InstagramPost />
         </main>
     );
 };
