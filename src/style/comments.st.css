@@ -91,10 +91,6 @@
   justify-content: space-between;
 }
 
-.commentContentContainer {
-  display: flex;
-}
-
 .text {
   margin-left: 0.3em;
 }

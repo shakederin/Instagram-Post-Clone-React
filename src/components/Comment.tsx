@@ -27,7 +27,10 @@ const Comment = (props: comment) => {
 
                         <CommentContent content={props.content} className={classes.text} />
                     </div>
-                    <CommentInfo className={classes.commentInfo} />
+                    <CommentInfo
+                        className={classes.commentInfo}
+                        isDescription={props.description}
+                    />
                 </div>
                 {props.description ? <></> : <LikeComment />}
             </div>

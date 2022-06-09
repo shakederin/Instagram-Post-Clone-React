@@ -15,7 +15,6 @@ const CommentsList = (props: postOwner) => {
                     userName={props.name}
                     content={'me, at the sunrise'}
                 />
-                --map--
             </ul>
         </div>
     );

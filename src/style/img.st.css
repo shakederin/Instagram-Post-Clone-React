@@ -7,12 +7,12 @@
   justify-content: space-between;
 }
 
-.leftArrow{
+.rightArrow{
   transform: rotate(180deg);
 }
 
 .arrow{
   margin: 0.5em;
-  height: 2.5em;
+  height: 1.7em;
   cursor: pointer;
 }
