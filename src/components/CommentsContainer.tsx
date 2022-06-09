@@ -1,8 +1,7 @@
-import InputForm from './commentsForm/InputForm';
-import LikeContainer from './commentsForm/LikeContainer';
 import CommentsList from './CommentsList';
 import Header from './Header';
 import { classes } from '../style/main.st.css';
+import PostReply from './PostReply';
 
 interface postInfo {
     userName: string;
@@ -15,8 +14,7 @@ const CommentsContainer = (props: postInfo) => {
         <div className={classes.commentsContainer}>
             <Header name={props.userName} profilePicture={props.profilePicture} />
             <CommentsList name={props.userName} profilePicture={props.profilePicture} />
-            <LikeContainer />
-            <InputForm />
+            <PostReply />
         </div>
     );
 };

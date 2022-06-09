@@ -1,11 +1,11 @@
-import Icon from '../../general/Icon';
-import smileSVG from '../../assets/smile.svg';
-import { classes } from '../../style/reply.st.css';
+import Icon from './Icon';
+import smileSVG from '../assets/smile.svg';
+import { classes } from '../style/reply.st.css';
 
 const InputForm = () => {
     return (
-        <form id="inputForm">
-            <div className="inputArea">
+        <form className={classes.inputForm}>
+            <div className={classes.inputArea}>
                 <Icon img={smileSVG} className={classes.svgImg} id={'smileSVG'} />
                 <input id="commentInput" type={'text'} placeholder="Add a comment..." />
             </div>

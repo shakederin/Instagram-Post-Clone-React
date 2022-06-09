@@ -1,7 +1,7 @@
-import Icon from '../general/Icon';
-import ProfilePicture from '../general/ProfilePicture';
+import Icon from './Icon';
+import ProfilePicture from './ProfilePicture';
 import ellipsis from '../assets/ellipsis.svg';
-import Username from '../general/Username';
+import Username from './Username';
 import { classes } from '../style/comments.st.css';
 
 interface postOwner {

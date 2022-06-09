@@ -1,6 +1,6 @@
-import CommentsContainer from './comments/CommentsContainer';
-import ImageContainer from './image/ImageContainer';
-import { classes } from './style/main.st.css';
+import CommentsContainer from './CommentsContainer';
+import ImageContainer from './ImageContainer';
+import { classes } from '../style/main.st.css';
 const pp = 'https://cdn.pixabay.com/photo/2021/05/20/11/58/beauty-6268460_1280.jpg';
 
 const InstagramPost = () => {

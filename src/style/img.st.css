@@ -1,0 +1,18 @@
+.mainImg {
+  height: 100%;
+  width: 50em;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftArrow{
+  transform: rotate(180deg);
+}
+
+.arrow{
+  margin: 0.5em;
+  height: 2.5em;
+  cursor: pointer;
+}

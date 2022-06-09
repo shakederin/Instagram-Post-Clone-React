@@ -1,7 +1,7 @@
-import CommentInfo from '../general/CommentInfo';
-import LikeComment from '../general/LikeComment';
-import ProfilePicture from '../general/ProfilePicture';
-import Username from '../general/Username';
+import CommentInfo from './CommentInfo';
+import LikeComment from './LikeComment';
+import ProfilePicture from './ProfilePicture';
+import Username from './Username';
 import CommentContent from './CommentContent';
 import { classes } from '../style/comments.st.css';
 
@@ -25,10 +25,7 @@ const Comment = (props: comment) => {
                     <div>
                         <Username id={''} name={props.userName} header={false} />
 
-                        <CommentContent
-                            content={props.content}
-                            className={classes.commentContent}
-                        />
+                        <CommentContent content={props.content} className={classes.text} />
                     </div>
                     <CommentInfo className={classes.commentInfo} />
                 </div>
