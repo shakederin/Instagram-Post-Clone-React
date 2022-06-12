@@ -45,7 +45,7 @@
   height: 30em;
 }
 
-#commentsList {
+.commentsList {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -55,7 +55,7 @@
   overflow: scroll;
 }
 
-#commentsList::-webkit-scrollbar {
+.commentsList::-webkit-scrollbar {
   display: none;
 }
 
