@@ -1,16 +1,22 @@
 import CommentsContainer from './CommentsContainer';
 import ImageContainer from './ImageContainer';
 import { classes } from '../style/main.st.css';
-import { PROPILE_PICTURE } from '../constants';
 
-const InstagramPost = () => {
+interface Post {
+    img: string;
+    userName: string;
+    postDescription: string;
+    profilePicture: string;
+}
+
+const InstagramPost = ({ img, userName, postDescription, profilePicture }: Post) => {
     return (
         <div className={classes.mainContainer}>
-            <ImageContainer />
+            <ImageContainer imgUrl={img} />
             <CommentsContainer
-                profilePicture={PROPILE_PICTURE}
-                userName="tonytoscani"
-                postDescription='"The Tuthor" Oil on Linen 36" x 28"'
+                profilePicture={profilePicture}
+                userName={userName}
+                postDescription={postDescription}
             />
         </div>
     );

@@ -2,8 +2,8 @@ interface ProfilePicture {
     src: string;
     className: string;
 }
-const ProfilePicture = (props: ProfilePicture) => {
-    return <img src={props.src} className={props.className} />;
+const ProfilePicture = ({ src, className }: ProfilePicture) => {
+    return <img src={src} className={className} />;
 };
 
 export default ProfilePicture;

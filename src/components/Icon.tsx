@@ -2,8 +2,8 @@ interface IconProps {
     img: string;
     className: string;
 }
-const Icon = (props: IconProps) => {
-    return <img className={props.className} src={props.img} />;
+const Icon = ({ img, className }: IconProps) => {
+    return <img className={className} src={img} />;
 };
 
 export default Icon;

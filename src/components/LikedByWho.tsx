@@ -2,6 +2,7 @@ import { st, classes } from '../style/reply.st.css';
 import { classes as commentClassesNames } from '../style/comments.st.css';
 import { classes as mainClassesNames } from '../style/main.st.css';
 import { FIRST_LIKED_BY_PROPILE_PICTURE, SECOND_LIKED_BY_PROPILE_PICTURE } from '../constants';
+
 const LikedByWho = () => {
     return (
         <div className={classes.allLikes}>

@@ -9,11 +9,15 @@ interface postInfo {
     postDescription: string;
 }
 
-const CommentsContainer = (props: postInfo) => {
+const CommentsContainer = ({ userName, postDescription, profilePicture }: postInfo) => {
     return (
         <div className={classes.commentsContainer}>
-            <Header name={props.userName} profilePicture={props.profilePicture} />
-            <CommentsList name={props.userName} profilePicture={props.profilePicture} />
+            <Header name={userName} profilePicture={profilePicture} />
+            <CommentsList
+                name={userName}
+                postDescription={postDescription}
+                profilePicture={profilePicture}
+            />
             <PostReply />
         </div>
     );

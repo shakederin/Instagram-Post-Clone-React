@@ -2,8 +2,8 @@ interface content {
     content: string;
     className: string;
 }
-const CommentContent = (props: content) => {
-    return <span className={props.className}>{props.content}</span>;
+const CommentContent = ({ content, className }: content) => {
+    return <span className={className}>{content}</span>;
 };
 
 export default CommentContent;

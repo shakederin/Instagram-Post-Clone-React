@@ -9,12 +9,12 @@ interface postOwner {
     profilePicture: string;
 }
 
-const Header = (props: postOwner) => {
+const Header = ({ name, profilePicture }: postOwner) => {
     return (
         <div className={classes.commentsContainerHeader}>
             <div className={classes.profilePictureHeaderBlock}>
-                <ProfilePicture src={props.profilePicture} className={classes.profilePicture} />
-                <Username id="commentsHeader" name={props.name} header={true} />
+                <ProfilePicture src={profilePicture} className={classes.profilePicture} />
+                <Username id="commentsHeader" name={name} header={true} />
             </div>
             <Icon img={ellipsis} className={classes.ellipsis} />
         </div>

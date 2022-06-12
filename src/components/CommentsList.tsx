@@ -3,17 +3,18 @@ import { classes } from '../style/comments.st.css';
 interface postOwner {
     name: string;
     profilePicture: string;
+    postDescription: string;
 }
 
-const CommentsList = (props: postOwner) => {
+const CommentsList = ({ name, postDescription, profilePicture }: postOwner) => {
     return (
         <div className={classes.commentsBlock}>
             <ul className={classes.commentsList}>
                 <Comment
                     description={true}
-                    ProfilePicture={props.profilePicture}
-                    userName={props.name}
-                    content={'me, at the sunrise'}
+                    profilePicture={profilePicture}
+                    userName={name}
+                    content={postDescription}
                 />
             </ul>
         </div>

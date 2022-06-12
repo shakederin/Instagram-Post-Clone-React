@@ -7,27 +7,24 @@ import { classes } from '../style/comments.st.css';
 
 interface comment {
     description: boolean;
-    ProfilePicture: string;
+    profilePicture: string;
     userName: string;
     content: string;
 }
 
-const Comment = (props: comment) => {
+const Comment = ({ description, profilePicture, userName, content }: comment) => {
     return (
         <li className={classes.comment}>
             <div className={classes.postTitle}>
-                <ProfilePicture src={props.ProfilePicture} className={classes.profilePicture} />
+                <ProfilePicture src={profilePicture} className={classes.profilePicture} />
                 <div className={classes.commentText}>
                     <div>
-                        <Username name={props.userName} header={false} />
-                        <CommentContent content={props.content} className={classes.text} />
+                        <Username name={userName} header={false} />
+                        <CommentContent content={content} className={classes.text} />
                     </div>
-                    <CommentInfo
-                        className={classes.commentInfo}
-                        isDescription={props.description}
-                    />
+                    <CommentInfo className={classes.commentInfo} isDescription={description} />
                 </div>
-                {props.description ? <></> : <LikeComment />}
+                {description ? <></> : <LikeComment />}
             </div>
         </li>
     );

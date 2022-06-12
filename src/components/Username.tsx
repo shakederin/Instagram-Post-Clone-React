@@ -4,15 +4,15 @@ interface username {
     header: boolean;
     id?: string;
 }
-const Username = (props: username) => {
+const Username = ({ name, header, id }: username) => {
     return (
         <>
-            {props.header ? (
-                <span id={props.id}>
-                    <span className={classes.boldText}>{props.name} &#8226; Following</span>
+            {header ? (
+                <span id={id}>
+                    <span className={classes.boldText}>{name} &#8226; Following</span>
                 </span>
             ) : (
-                <span className={classes.boldText}>{props.name}</span>
+                <span className={classes.boldText}>{name}</span>
             )}
         </>
     );
