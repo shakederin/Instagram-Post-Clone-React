@@ -35,12 +35,12 @@
   margin-bottom: 0.5em;
 }
 
-#ellipsis {
+.ellipsis {
   margin-right: 1em;
   width: 1.2em;
 }
 
-#commentsBlock {
+.commentsBlock {
   display: flex;
   height: 30em;
 }
@@ -59,7 +59,7 @@
   display: none;
 }
 
-#postTitle {
+.postTitle {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

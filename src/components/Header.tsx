@@ -13,14 +13,10 @@ const Header = (props: postOwner) => {
     return (
         <div className={classes.commentsContainerHeader}>
             <div className={classes.profilePictureHeaderBlock}>
-                <ProfilePicture
-                    src={props.profilePicture}
-                    className={classes.profilePicture}
-                    id=""
-                />
+                <ProfilePicture src={props.profilePicture} className={classes.profilePicture} />
                 <Username id="commentsHeader" name={props.name} header={true} />
             </div>
-            <Icon img={ellipsis} id="ellipsis" className="" />
+            <Icon img={ellipsis} className={classes.ellipsis} />
         </div>
     );
 };

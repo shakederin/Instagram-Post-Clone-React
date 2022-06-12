@@ -1,8 +1,8 @@
 import { classes } from '../style/main.st.css';
 interface username {
-    id: string;
     name: string;
     header: boolean;
+    id?: string;
 }
 const Username = (props: username) => {
     return (

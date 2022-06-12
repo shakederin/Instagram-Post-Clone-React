@@ -1,14 +1,14 @@
 import CommentsContainer from './CommentsContainer';
 import ImageContainer from './ImageContainer';
 import { classes } from '../style/main.st.css';
-const pp = 'https://cdn.pixabay.com/photo/2021/05/20/11/58/beauty-6268460_1280.jpg';
+import { PROPILE_PICTURE } from '../constants';
 
 const InstagramPost = () => {
     return (
         <div className={classes.mainContainer}>
             <ImageContainer />
             <CommentsContainer
-                profilePicture={pp}
+                profilePicture={PROPILE_PICTURE}
                 userName="tonytoscani"
                 postDescription='"The Tuthor" Oil on Linen 36" x 28"'
             />

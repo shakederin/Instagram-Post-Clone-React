@@ -7,7 +7,7 @@ interface postOwner {
 
 const CommentsList = (props: postOwner) => {
     return (
-        <div id="commentsBlock">
+        <div className={classes.commentsBlock}>
             <ul className={classes.commentsList}>
                 <Comment
                     description={true}

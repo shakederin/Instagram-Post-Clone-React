@@ -7,7 +7,7 @@ const PostResponseBar = () => {
     return (
         <div className={classes.icons}>
             <div>
-                <Icon img={heart} className={classes.svgImg} id={''} />
+                <Icon img={heart} className={classes.svgImg} />
                 <svg
                     className={classes.svgImg}
                     aria-label="Comment"

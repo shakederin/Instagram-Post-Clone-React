@@ -15,16 +15,11 @@ interface comment {
 const Comment = (props: comment) => {
     return (
         <li className={classes.comment}>
-            <div id="postTitle">
-                <ProfilePicture
-                    src={props.ProfilePicture}
-                    className={classes.profilePicture}
-                    id={''}
-                />
+            <div className={classes.postTitle}>
+                <ProfilePicture src={props.ProfilePicture} className={classes.profilePicture} />
                 <div className={classes.commentText}>
                     <div>
-                        <Username id={''} name={props.userName} header={false} />
-
+                        <Username name={props.userName} header={false} />
                         <CommentContent content={props.content} className={classes.text} />
                     </div>
                     <CommentInfo

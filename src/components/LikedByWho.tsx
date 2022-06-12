@@ -1,20 +1,20 @@
 import { st, classes } from '../style/reply.st.css';
 import { classes as commentClassesNames } from '../style/comments.st.css';
 import { classes as mainClassesNames } from '../style/main.st.css';
-
+import { FIRST_LIKED_BY_PROPILE_PICTURE, SECOND_LIKED_BY_PROPILE_PICTURE } from '../constants';
 const LikedByWho = () => {
     return (
         <div className={classes.allLikes}>
             <div className={classes.likeByWho}>
                 <div className={classes.UserLikeByPic}>
                     <img
-                        src="https://cdn.pixabay.com/photo/2021/06/04/10/28/portrait-6309448_960_720.jpg"
+                        src={FIRST_LIKED_BY_PROPILE_PICTURE}
                         alt="profile Picture"
                         className={st(classes.likeFP, commentClassesNames.profilePicture)}
                         id="otherUserLikeByPic"
                     ></img>
                     <img
-                        src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/80/posts/26761/image/27-MalePortraits.jpg"
+                        src={SECOND_LIKED_BY_PROPILE_PICTURE}
                         alt="profile Picture"
                         className={st(classes.likeFP, commentClassesNames.profilePicture)}
                         id="lastUserLikeByPic"
