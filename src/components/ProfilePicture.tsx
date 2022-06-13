@@ -1,8 +1,8 @@
-interface ProfilePicture {
+interface IProfilePicture {
     src: string;
     className: string;
 }
-const ProfilePicture = ({ src, className }: ProfilePicture) => (
+const ProfilePicture = ({ src, className }: IProfilePicture) => (
     <img src={src} className={className} />
 );
 

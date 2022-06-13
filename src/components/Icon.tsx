@@ -1,7 +1,7 @@
-interface IconProps {
+interface IIconProps {
     img: string;
     className: string;
 }
-const Icon = ({ img, className }: IconProps) => <img className={className} src={img} />;
+const Icon = ({ img, className }: IIconProps) => <img className={className} src={img} />;
 
 export default Icon;

@@ -4,12 +4,12 @@ import ellipsis from '../assets/ellipsis.svg';
 import Username from './Username';
 import { classes } from '../style/comments.st.css';
 
-interface postOwner {
+interface IPostOwner {
     name: string;
     profilePicture: string;
 }
 
-const Header = ({ name, profilePicture }: postOwner) => (
+const Header = ({ name, profilePicture }: IPostOwner) => (
     <div className={classes.commentsContainerHeader}>
         <div className={classes.profilePictureHeaderBlock}>
             <ProfilePicture src={profilePicture} className={classes.profilePicture} />

@@ -1,8 +1,8 @@
-interface content {
+interface IContent {
     content: string;
     className: string;
 }
-const CommentContent = ({ content, className }: content) => (
+const CommentContent = ({ content, className }: IContent) => (
     <span className={className}>{content}</span>
 );
 

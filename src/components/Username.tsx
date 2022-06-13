@@ -1,10 +1,10 @@
 import { classes } from '../style/main.st.css';
-interface username {
+interface IUsername {
     name: string;
     header: boolean;
     id?: string;
 }
-const Username = ({ name, header, id }: username) => (
+const Username = ({ name, header, id }: IUsername) => (
     <>
         {header ? (
             <span id={id}>

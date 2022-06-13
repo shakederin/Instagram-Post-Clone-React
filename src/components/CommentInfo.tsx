@@ -1,8 +1,8 @@
-interface commentInfo {
+interface ICommentInfo {
     className: string;
     isDescription: boolean;
 }
-const CommentInfo = ({ className, isDescription }: commentInfo) => {
+const CommentInfo = ({ className, isDescription }: ICommentInfo) => {
     return isDescription ? (
         <div className={className}>10 h</div>
     ) : (

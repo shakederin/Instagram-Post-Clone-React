@@ -5,14 +5,14 @@ import Username from './Username';
 import CommentContent from './CommentContent';
 import { classes } from '../style/comments.st.css';
 
-interface comment {
+interface IComment {
     description: boolean;
     profilePicture: string;
     userName: string;
     content: string;
 }
 
-const Comment = ({ description, profilePicture, userName, content }: comment) => (
+const Comment = ({ description, profilePicture, userName, content }: IComment) => (
     <li className={classes.comment}>
         <div className={classes.postTitle}>
             <ProfilePicture src={profilePicture} className={classes.profilePicture} />
