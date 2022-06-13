@@ -1,5 +1,5 @@
 import ImageContainer from './ImageContainer';
-import CommentsContainer from './CommentsContainer';
+import PostLayout from './PostLayout';
 import { classes } from '../style/main.st.css';
 
 interface IPost {
@@ -12,11 +12,7 @@ interface IPost {
 const InstagramPost = ({ img, userName, description, profilePicture }: IPost) => (
     <div className={classes.mainContainer}>
         <ImageContainer imgUrl={img} />
-        <CommentsContainer
-            profilePicture={profilePicture}
-            userName={userName}
-            description={description}
-        />
+        <PostLayout profilePicture={profilePicture} userName={userName} description={description} />
     </div>
 );
 

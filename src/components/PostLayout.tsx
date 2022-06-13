@@ -9,12 +9,12 @@ interface IPostInfo {
     description: string;
 }
 
-const CommentsContainer = ({ userName, description, profilePicture }: IPostInfo) => (
-    <div className={classes.commentsContainer}>
+const PostLayout = ({ userName, description, profilePicture }: IPostInfo) => (
+    <div className={classes.postLayout}>
         <Header name={userName} profilePicture={profilePicture} />
         <CommentsList name={userName} description={description} profilePicture={profilePicture} />
         <PostReactionContainer />
     </div>
 );
 
-export default CommentsContainer;
+export default PostLayout;
