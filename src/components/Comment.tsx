@@ -1,5 +1,5 @@
 import CommentInfo from './CommentInfo';
-import LikeComment from './LikeComment';
+import LikeCommentButton from './LikeCommentButton';
 import ProfilePicture from './ProfilePicture';
 import Username from './Username';
 import CommentContent from './CommentContent';
@@ -12,22 +12,20 @@ interface comment {
     content: string;
 }
 
-const Comment = ({ description, profilePicture, userName, content }: comment) => {
-    return (
-        <li className={classes.comment}>
-            <div className={classes.postTitle}>
-                <ProfilePicture src={profilePicture} className={classes.profilePicture} />
-                <div className={classes.commentText}>
-                    <div>
-                        <Username name={userName} header={false} />
-                        <CommentContent content={content} className={classes.text} />
-                    </div>
-                    <CommentInfo className={classes.commentInfo} isDescription={description} />
+const Comment = ({ description, profilePicture, userName, content }: comment) => (
+    <li className={classes.comment}>
+        <div className={classes.postTitle}>
+            <ProfilePicture src={profilePicture} className={classes.profilePicture} />
+            <div className={classes.commentText}>
+                <div>
+                    <Username name={userName} header={false} />
+                    <CommentContent content={content} className={classes.text} />
                 </div>
-                {description ? <></> : <LikeComment />}
+                <CommentInfo className={classes.commentInfo} isDescription={description} />
             </div>
-        </li>
-    );
-};
+            {description ? <></> : <LikeCommentButton />}
+        </div>
+    </li>
+);
 
 export default Comment;

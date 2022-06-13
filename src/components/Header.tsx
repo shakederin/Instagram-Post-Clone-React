@@ -9,16 +9,14 @@ interface postOwner {
     profilePicture: string;
 }
 
-const Header = ({ name, profilePicture }: postOwner) => {
-    return (
-        <div className={classes.commentsContainerHeader}>
-            <div className={classes.profilePictureHeaderBlock}>
-                <ProfilePicture src={profilePicture} className={classes.profilePicture} />
-                <Username id="commentsHeader" name={name} header={true} />
-            </div>
-            <Icon img={ellipsis} className={classes.ellipsis} />
+const Header = ({ name, profilePicture }: postOwner) => (
+    <div className={classes.commentsContainerHeader}>
+        <div className={classes.profilePictureHeaderBlock}>
+            <ProfilePicture src={profilePicture} className={classes.profilePicture} />
+            <Username id="commentsHeader" name={name} header={true} />
         </div>
-    );
-};
+        <Icon img={ellipsis} className={classes.ellipsis} />
+    </div>
+);
 
 export default Header;
