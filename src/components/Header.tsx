@@ -1,7 +1,7 @@
 import Icon from './Icon';
+import Username from './Username';
 import ProfilePicture from './ProfilePicture';
 import ellipsis from '../assets/ellipsis.svg';
-import Username from './Username';
 import { classes } from '../style/comments.st.css';
 
 interface IPostOwner {

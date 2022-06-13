@@ -1,5 +1,5 @@
-import { st, classes } from './style/main.st.css';
 import InstagramPost from './components/InstagramPost';
+import { st, classes } from './style/main.st.css';
 import { POST_IMAGE, PROFILE_PICTURE, POST_DESCRIPTION, USER_NAME } from './constants';
 
 export const App = () => (

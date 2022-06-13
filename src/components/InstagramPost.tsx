@@ -1,5 +1,5 @@
-import CommentsContainer from './CommentsContainer';
 import ImageContainer from './ImageContainer';
+import CommentsContainer from './CommentsContainer';
 import { classes } from '../style/main.st.css';
 
 interface IPost {

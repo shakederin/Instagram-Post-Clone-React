@@ -1,6 +1,6 @@
+import Icon from './Icon';
 import { classes } from '../style/reply.st.css';
 import saveIcon from '../assets/save-icon.svg';
-import Icon from './Icon';
 import heart from '../assets/heart.svg';
 
 const PostResponseBar = () => (

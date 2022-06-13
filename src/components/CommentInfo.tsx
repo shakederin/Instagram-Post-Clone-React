@@ -1,15 +1,13 @@
-interface ICommentInfo {
-    className: string;
-    isDescription: boolean;
-}
-const CommentInfo = ({ className, isDescription }: ICommentInfo) => {
-    return isDescription ? (
-        <div className={className}>10 h</div>
+import { classes } from '../style/comments.st.css';
+
+const CommentInfo = ({ isOwnerComment }: { isOwnerComment: boolean }) => {
+    return isOwnerComment ? (
+        <div className={classes.commentInfo}>10 h</div>
     ) : (
         <div>
-            <div className={className}>0 h</div>
-            <div className={className}>like</div>
-            <div className={className}>Reply</div>
+            <div className={classes.infoSubtitle}>0 h</div>
+            <div className={classes.infoSubtitle}>like</div>
+            <div className={classes.infoSubtitle}>Reply</div>
         </div>
     );
 };

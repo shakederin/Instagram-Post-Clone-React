@@ -10,7 +10,7 @@ const CommentsList = ({ name, description, profilePicture }: IPostOwner) => (
     <div className={classes.commentsBlock}>
         <ul className={classes.commentsList}>
             <Comment
-                description={true}
+                isOwnerComment={true}
                 profilePicture={profilePicture}
                 userName={name}
                 content={description}

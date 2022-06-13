@@ -1,9 +1,7 @@
-interface IContent {
-    content: string;
-    className: string;
-}
-const CommentContent = ({ content, className }: IContent) => (
-    <span className={className}>{content}</span>
+import { classes } from '../style/comments.st.css';
+
+const CommentContent = ({ content }: { content: string }) => (
+    <span className={classes.text}>{content}</span>
 );
 
 export default CommentContent;

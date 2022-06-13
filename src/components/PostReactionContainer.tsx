@@ -1,12 +1,12 @@
-import { classes } from '../style/reply.st.css';
 import InputForm from './InputForm';
 import LikeContainer from './LikeContainer';
+import { classes } from '../style/reply.st.css';
 
-const PostReply = () => (
+const PostReactionContainer = () => (
     <div className={classes.replyArea}>
         <LikeContainer />
         <InputForm />
     </div>
 );
 
-export default PostReply;
+export default PostReactionContainer;

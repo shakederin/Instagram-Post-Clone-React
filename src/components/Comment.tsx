@@ -1,29 +1,29 @@
-import CommentInfo from './CommentInfo';
-import LikeCommentButton from './LikeCommentButton';
-import ProfilePicture from './ProfilePicture';
 import Username from './Username';
+import CommentInfo from './CommentInfo';
+import ProfilePicture from './ProfilePicture';
 import CommentContent from './CommentContent';
+import LikeCommentButton from './LikeCommentButton';
 import { classes } from '../style/comments.st.css';
 
 interface IComment {
-    description: boolean;
+    isOwnerComment: boolean;
     profilePicture: string;
     userName: string;
     content: string;
 }
 
-const Comment = ({ description, profilePicture, userName, content }: IComment) => (
+const Comment = ({ isOwnerComment, profilePicture, userName, content }: IComment) => (
     <li className={classes.comment}>
         <div className={classes.postTitle}>
             <ProfilePicture className={classes.profilePicture} src={profilePicture} />
             <div className={classes.commentText}>
                 <div>
                     <Username name={userName} header={false} />
-                    <CommentContent className={classes.text} content={content} />
+                    <CommentContent content={content} />
                 </div>
-                <CommentInfo className={classes.commentInfo} isDescription={description} />
+                <CommentInfo isOwnerComment={isOwnerComment} />
             </div>
-            {description ? <></> : <LikeCommentButton />}
+            {isOwnerComment ? <></> : <LikeCommentButton />}
         </div>
     </li>
 );
