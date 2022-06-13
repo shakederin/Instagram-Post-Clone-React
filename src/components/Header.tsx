@@ -13,7 +13,7 @@ const Header = ({ name, profilePicture }: IPostOwner) => (
     <div className={classes.header}>
         <div className={classes.profilePictureHeaderBlock}>
             <ProfilePicture className={classes.profilePicture} src={profilePicture} />
-            <Username id="commentsHeader" name={name} header={true} />
+            <Username name={name} header={true} />
         </div>
         <Icon className={classes.ellipsis} img={ellipsis} />
     </div>

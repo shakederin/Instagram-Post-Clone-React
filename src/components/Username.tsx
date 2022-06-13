@@ -1,13 +1,14 @@
+import { classes as commentClasses } from '../style/comments.st.css';
 import { classes } from '../style/main.st.css';
+
 interface IUsername {
     name: string;
     header: boolean;
-    id?: string;
 }
-const Username = ({ name, header, id }: IUsername) => (
+const Username = ({ name, header }: IUsername) => (
     <>
         {header ? (
-            <span id={id}>
+            <span className={commentClasses.commentsHeader}>
                 <span className={classes.boldText}>{name} &#8226; Following</span>
             </span>
         ) : (
