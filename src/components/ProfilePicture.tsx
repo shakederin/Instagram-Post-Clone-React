@@ -3,7 +3,7 @@ interface IProfilePicture {
     className: string;
 }
 const ProfilePicture = ({ src, className }: IProfilePicture) => (
-    <img src={src} className={className} />
+    <img className={className} src={src} />
 );
 
 export default ProfilePicture;

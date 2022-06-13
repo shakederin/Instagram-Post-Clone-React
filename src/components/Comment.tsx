@@ -15,11 +15,11 @@ interface IComment {
 const Comment = ({ description, profilePicture, userName, content }: IComment) => (
     <li className={classes.comment}>
         <div className={classes.postTitle}>
-            <ProfilePicture src={profilePicture} className={classes.profilePicture} />
+            <ProfilePicture className={classes.profilePicture} src={profilePicture} />
             <div className={classes.commentText}>
                 <div>
                     <Username name={userName} header={false} />
-                    <CommentContent content={content} className={classes.text} />
+                    <CommentContent className={classes.text} content={content} />
                 </div>
                 <CommentInfo className={classes.commentInfo} isDescription={description} />
             </div>

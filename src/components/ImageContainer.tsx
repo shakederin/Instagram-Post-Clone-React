@@ -5,8 +5,8 @@ import arrow from '../assets/scroll-arrow.svg';
 const ImageContainer = ({ imgUrl }: { imgUrl: string }) => (
     <div>
         <div className={classes.mainImg} style={{ backgroundImage: `url(${imgUrl})` }}>
-            <ScrollButton svg={arrow} className={classes.arrow} />
-            <ScrollButton svg={arrow} className={style(classes.rightArrow, classes.arrow)} />
+            <ScrollButton className={classes.arrow} svg={arrow} />
+            <ScrollButton className={style(classes.rightArrow, classes.arrow)} svg={arrow} />
         </div>
     </div>
 );

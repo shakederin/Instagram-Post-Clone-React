@@ -12,10 +12,10 @@ interface IPostOwner {
 const Header = ({ name, profilePicture }: IPostOwner) => (
     <div className={classes.commentsContainerHeader}>
         <div className={classes.profilePictureHeaderBlock}>
-            <ProfilePicture src={profilePicture} className={classes.profilePicture} />
+            <ProfilePicture className={classes.profilePicture} src={profilePicture} />
             <Username id="commentsHeader" name={name} header={true} />
         </div>
-        <Icon img={ellipsis} className={classes.ellipsis} />
+        <Icon className={classes.ellipsis} img={ellipsis} />
     </div>
 );
 

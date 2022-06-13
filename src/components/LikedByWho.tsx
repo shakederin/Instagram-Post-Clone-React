@@ -8,15 +8,15 @@ const LikedByWho = () => (
         <div className={classes.likeByWho}>
             <div className={classes.UserLikeByPic}>
                 <img
+                    className={st(classes.likeFP, commentClassesNames.profilePicture)}
                     src={FIRST_LIKED_BY_PROFILE_PICTURE}
                     alt="profile Picture"
-                    className={st(classes.likeFP, commentClassesNames.profilePicture)}
                     id="otherUserLikeByPic"
                 ></img>
                 <img
+                    className={st(classes.likeFP, commentClassesNames.profilePicture)}
                     src={SECOND_LIKED_BY_PROFILE_PICTURE}
                     alt="profile Picture"
-                    className={st(classes.likeFP, commentClassesNames.profilePicture)}
                     id="lastUserLikeByPic"
                 ></img>
             </div>
