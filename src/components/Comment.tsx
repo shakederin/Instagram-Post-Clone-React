@@ -15,7 +15,7 @@ interface IComment {
 const Comment = ({ isOwnerComment, profilePicture, userName, content }: IComment) => (
     <li className={classes.comment}>
         <div className={classes.postTitle}>
-            <ProfilePicture className={classes.profilePicture} src={profilePicture} />
+            <ProfilePicture src={profilePicture} />
             <div className={classes.commentText}>
                 <div>
                     <Username userName={userName} header={false} />

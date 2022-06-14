@@ -12,7 +12,11 @@ interface IPostInfo {
 const PostLayout = ({ userName, description, profilePicture }: IPostInfo) => (
     <div className={classes.postLayout}>
         <PostHeader userName={userName} profilePicture={profilePicture} />
-        <CommentsList userName={userName} description={description} profilePicture={profilePicture} />
+        <CommentsList
+            userName={userName}
+            description={description}
+            profilePicture={profilePicture}
+        />
         <PostReactionContainer />
     </div>
 );

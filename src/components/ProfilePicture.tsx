@@ -1,9 +1,9 @@
+import { classes } from '../style/comments.st.css';
 interface IProfilePicture {
     src: string;
-    className: string;
 }
-const ProfilePicture = ({ src, className }: IProfilePicture) => (
-    <img className={className} src={src} />
+const ProfilePicture = ({ src }: IProfilePicture) => (
+    <img className={classes.profilePicture} src={src} />
 );
 
 export default ProfilePicture;

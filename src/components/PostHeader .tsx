@@ -12,7 +12,7 @@ interface IPostOwner {
 const PostHeader = ({ userName, profilePicture }: IPostOwner) => (
     <div className={classes.header}>
         <div className={classes.profilePictureHeaderBlock}>
-            <ProfilePicture className={classes.profilePicture} src={profilePicture} />
+            <ProfilePicture src={profilePicture} />
             <Username userName={userName} header={true} />
         </div>
         <Icon className={classes.ellipsis} img={ellipsis} />

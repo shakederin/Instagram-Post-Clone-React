@@ -1,0 +1,16 @@
+.icons {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0.5em;
+}
+
+.svgImg {
+  width: 1.5em;
+  margin: 0 0.5em;
+  cursor: pointer;
+}
+
+.saveSVG {
+  width: 1.3em;
+  margin-right: 1.2em;
+}
