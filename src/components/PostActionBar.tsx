@@ -2,8 +2,13 @@ import Icon from './Icon';
 import { classes } from '../style/reply.st.css';
 import saveIcon from '../assets/save-icon.svg';
 import heart from '../assets/heart.svg';
+import redHeart from '../assets/red-heart.svg';
 
-const PostResponseBar = () => (
+interface IPostActionBar {
+    likePost: () => void;
+}
+
+const PostActionBar = ({ likePost }: IPostActionBar) => (
     <div className={classes.icons}>
         <div>
             <Icon img={heart} className={classes.svgImg} />
@@ -58,4 +63,4 @@ const PostResponseBar = () => (
     </div>
 );
 
-export default PostResponseBar;
+export default PostActionBar;

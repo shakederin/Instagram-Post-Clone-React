@@ -1,4 +1,4 @@
-import Header from './Header';
+import PostHeader from './PostHeader ';
 import CommentsList from './CommentsList';
 import PostReactionContainer from './PostReactionContainer';
 import { classes } from '../style/main.st.css';
@@ -11,8 +11,8 @@ interface IPostInfo {
 
 const PostLayout = ({ userName, description, profilePicture }: IPostInfo) => (
     <div className={classes.postLayout}>
-        <Header name={userName} profilePicture={profilePicture} />
-        <CommentsList name={userName} description={description} profilePicture={profilePicture} />
+        <PostHeader userName={userName} profilePicture={profilePicture} />
+        <CommentsList userName={userName} description={description} profilePicture={profilePicture} />
         <PostReactionContainer />
     </div>
 );

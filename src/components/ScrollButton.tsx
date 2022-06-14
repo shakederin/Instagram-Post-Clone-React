@@ -1,9 +1,11 @@
 import Icon from './Icon';
 
-interface IArrow {
-    svg: string;
+interface IScrollButton {
+    svgPath: string;
     className: string;
 }
-const ScrollButton = ({ svg, className }: IArrow) => <Icon className={className} img={svg} />;
+const ScrollButton = ({ svgPath, className }: IScrollButton) => (
+    <Icon className={className} img={svgPath} />
+);
 
 export default ScrollButton;

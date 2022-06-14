@@ -25,7 +25,7 @@
   flex-direction: column;
 }
 
-.likeFP {
+.likeProfilePicture {
   width: 1.5em;
   height: 1.5em;
   border: 0em;
@@ -36,7 +36,7 @@
   flex-direction: row-reverse;
 }
 
-#otherUserLikeByPic {
+.otherUserLikeByPic {
   margin-left: -0.5em;
 }
 

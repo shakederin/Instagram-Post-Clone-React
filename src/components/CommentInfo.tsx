@@ -1,6 +1,9 @@
 import { classes } from '../style/comments.st.css';
+interface ICommentInfo {
+    isOwnerComment: boolean;
+}
 
-const CommentInfo = ({ isOwnerComment }: { isOwnerComment: boolean }) => {
+const CommentInfo = ({ isOwnerComment }: ICommentInfo) => {
     return isOwnerComment ? (
         <div className={classes.commentInfo}>10 h</div>
     ) : (

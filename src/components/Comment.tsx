@@ -18,7 +18,7 @@ const Comment = ({ isOwnerComment, profilePicture, userName, content }: IComment
             <ProfilePicture className={classes.profilePicture} src={profilePicture} />
             <div className={classes.commentText}>
                 <div>
-                    <Username name={userName} header={false} />
+                    <Username userName={userName} header={false} />
                     <CommentContent content={content} />
                 </div>
                 <CommentInfo isOwnerComment={isOwnerComment} />

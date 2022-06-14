@@ -1,18 +1,19 @@
 import Comment from './Comment';
 import { classes } from '../style/comments.st.css';
-interface IPostOwner {
-    name: string;
+
+interface ICommentList {
+    userName: string;
     profilePicture: string;
     description: string;
 }
 
-const CommentsList = ({ name, description, profilePicture }: IPostOwner) => (
+const CommentsList = ({ userName, description, profilePicture }: ICommentList) => (
     <div className={classes.commentsBlock}>
         <ul className={classes.commentsList}>
             <Comment
                 isOwnerComment={true}
                 profilePicture={profilePicture}
-                userName={name}
+                userName={userName}
                 content={description}
             />
         </ul>
