@@ -1,6 +1,6 @@
-import ScrollButton from './ScrollButton';
-import { style, classes } from '../style/img.st.css';
-import arrow from '../assets/scroll-arrow.svg';
+import ScrollButton from '../scrollButton/ScrollButton';
+import { style, classes } from './ImageContainer.st.css';
+import arrow from '../../assets/scroll-arrow.svg';
 
 const ImageContainer = ({ imgUrl }: { imgUrl: string }) => (
     <div>

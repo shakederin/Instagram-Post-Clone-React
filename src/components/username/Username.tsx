@@ -1,5 +1,5 @@
-import { classes as commentClasses } from '../style/comments.st.css';
-import { classes } from '../style/main.st.css';
+import { classes as commentClasses } from '../../style/comments.st.css';
+import { classes } from '../../style/main.st.css';
 
 interface IUsername {
     userName: string;

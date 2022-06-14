@@ -1,9 +1,9 @@
-import Username from './Username';
-import CommentInfo from './CommentInfo';
-import ProfilePicture from './ProfilePicture';
-import CommentContent from './CommentContent';
-import LikeCommentButton from './LikeCommentButton';
-import { classes } from '../style/comments.st.css';
+import Username from '../username/Username';
+import CommentInfo from '../commentInfo/CommentInfo';
+import ProfilePicture from '../profilePicture/ProfilePicture';
+import CommentContent from '../commentContent/CommentContent';
+import LikeCommentButton from '../likeCommentButoon/LikeCommentButton';
+import { classes } from './Comment.st.css';
 
 interface IComment {
     isOwnerComment: boolean;
@@ -21,7 +21,7 @@ const Comment = ({ isOwnerComment, profilePicture, userName, content }: IComment
                     <Username userName={userName} header={false} />
                     <CommentContent content={content} />
                 </div>
-                <CommentInfo isOwnerComment={isOwnerComment} />
+                <CommentInfo />
             </div>
             {isOwnerComment ? <></> : <LikeCommentButton />}
         </div>

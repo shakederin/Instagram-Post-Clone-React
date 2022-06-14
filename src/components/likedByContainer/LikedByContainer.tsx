@@ -1,18 +1,22 @@
-import { st, classes } from '../style/reply.st.css';
-import { classes as commentClassesNames } from '../style/comments.st.css';
-import { classes as mainClassesNames } from '../style/main.st.css';
-import { SAMPLE1_LIKED_BY_PROFILE_PICTURE, SAMPLE2_LIKED_BY_PROFILE_PICTURE } from '../constants';
+import { st, classes } from '../../style/reply.st.css';
+import { classes as commentClassesNames } from '../../style/comments.st.css';
+import { classes as mainClassesNames } from '../../style/main.st.css';
+import {
+    SAMPLE1_LIKED_BY_PROFILE_PICTURE,
+    SAMPLE2_LIKED_BY_PROFILE_PICTURE,
+} from '../../constants';
 
-interface ILikeByWho {
+interface ILikedByContainer {
     allPeopleWhoLiked: IPeopleWhoLiked[];
 }
 
 interface IPeopleWhoLiked {
+    // move to types
     userName: string;
     profilePicture: string;
 }
 
-const LikedByContainer = ({ allPeopleWhoLiked }: ILikeByWho) => (
+const LikedByContainer = ({ allPeopleWhoLiked }: ILikedByContainer) => (
     <div className={classes.allLikes}>
         <div className={classes.likeByWho}>
             <div className={classes.UserLikeByPic}>

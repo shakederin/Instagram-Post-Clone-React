@@ -1,7 +1,7 @@
-import Icon from './Icon';
-import smileSVG from '../assets/smile.svg';
-import { st, classes } from '../style/reply.st.css';
-import { PLACE_HOLDER } from '../constants';
+import Icon from '../icon/Icon';
+import smileSVG from '../../assets/smile.svg';
+import { st, classes } from '../../style/reply.st.css';
+import { PLACE_HOLDER } from '../../constants';
 const InputForm = () => (
     <form className={classes.inputForm}>
         <div className={classes.inputArea}>

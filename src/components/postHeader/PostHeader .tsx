@@ -1,8 +1,8 @@
-import Icon from './Icon';
-import Username from './Username';
-import ProfilePicture from './ProfilePicture';
-import ellipsis from '../assets/ellipsis.svg';
-import { classes } from '../style/comments.st.css';
+import Icon from '../icon/Icon';
+import Username from '../username/Username';
+import ProfilePicture from '../profilePicture/ProfilePicture';
+import ellipsis from '../../assets/ellipsis.svg';
+import { classes } from '../../style/comments.st.css';
 
 interface IPostOwner {
     userName: string;

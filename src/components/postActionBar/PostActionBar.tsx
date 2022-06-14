@@ -1,8 +1,8 @@
-import Icon from './Icon';
-import { classes } from '../style/reply.st.css';
-import saveIcon from '../assets/save-icon.svg';
-import heart from '../assets/heart.svg';
-import redHeart from '../assets/red-heart.svg';
+import Icon from '../icon/Icon';
+import { classes } from '../../style/reply.st.css';
+import saveIcon from '../../assets/save-icon.svg';
+import heart from '../../assets/heart.svg';
+import redHeart from '../../assets/red-heart.svg';
 
 interface IPostActionBar {
     likePost: () => void;
@@ -26,8 +26,8 @@ const PostActionBar = ({ likePost }: IPostActionBar) => (
                     d="M20.656 17.008a9.993 9.993 0 10-3.59 3.615L22 22z"
                     fill="none"
                     stroke="currentColor"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                 ></path>
             </svg>
             <svg
@@ -43,8 +43,8 @@ const PostActionBar = ({ likePost }: IPostActionBar) => (
                 <line
                     fill="none"
                     stroke="currentColor"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     x1="22"
                     x2="9.218"
                     y1="3"
@@ -54,8 +54,8 @@ const PostActionBar = ({ likePost }: IPostActionBar) => (
                     fill="none"
                     points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334"
                     stroke="currentColor"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                 />
             </svg>
         </div>

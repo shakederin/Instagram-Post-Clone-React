@@ -1,4 +1,4 @@
-import { classes } from '../style/comments.st.css';
+import { classes } from '../../style/comments.st.css';
 interface IProfilePicture {
     src: string;
 }
