@@ -1,7 +1,7 @@
 {
   "name": "instagram-post-clone",
   "version": "1.0.0",
-  "description": "Stylable App",
+  "description": "Instagram Post Clone",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
