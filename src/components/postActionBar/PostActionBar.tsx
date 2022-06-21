@@ -1,20 +1,14 @@
 import Icon from '../icon/Icon';
-import { classes as generalClasses } from '../../style/general.st.css';
-import { classes } from './PostActionBar.st.css';
-import saveIcon from '../../assets/save-icon.svg';
-import heart from '../../assets/heart.svg';
-import redHeart from '../../assets/red-heart.svg';
 
 interface IPostActionBar {
     likePost: () => void;
 }
 
 const PostActionBar = ({ likePost }: IPostActionBar) => (
-    <div className={classes.icons}>
+    <div>
         <div>
-            <Icon img={heart} className={generalClasses.svgImg} />
+            <Icon img={'heart'} className={''} />
             <svg
-                className={generalClasses.svgImg}
                 aria-label="Comment"
                 color="#262626"
                 fill="#262626"
@@ -32,7 +26,6 @@ const PostActionBar = ({ likePost }: IPostActionBar) => (
                 ></path>
             </svg>
             <svg
-                className={generalClasses.svgImg}
                 aria-label="Share Post"
                 color="#262626"
                 fill="#262626"
@@ -60,7 +53,7 @@ const PostActionBar = ({ likePost }: IPostActionBar) => (
                 />
             </svg>
         </div>
-        <img src={saveIcon} alt="save icon" className={classes.saveSVG} />
+        <img src={'saveIcon'} alt="save icon" />
     </div>
 );
 

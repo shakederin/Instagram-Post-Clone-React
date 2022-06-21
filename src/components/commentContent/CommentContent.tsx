@@ -1,10 +1,6 @@
-import { classes as generalClasses } from '../../style/general.st.css';
-
 interface ICommentContent {
     content: string;
 }
-const CommentContent = ({ content }: ICommentContent) => (
-    <span className={generalClasses.text}>{content}</span>
-);
+const CommentContent = ({ content }: ICommentContent) => <span>{content}</span>;
 
 export default CommentContent;

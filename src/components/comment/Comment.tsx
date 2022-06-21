@@ -3,8 +3,6 @@ import CommentInfo from '../commentInfo/CommentInfo';
 import ProfilePicture from '../profilePicture/ProfilePicture';
 import CommentContent from '../commentContent/CommentContent';
 import LikeCommentButton from '../likeCommentButoon/LikeCommentButton';
-import { classes as generalClasses } from '../../style/general.st.css';
-import { classes } from './Comment.st.css';
 import type { Comment as CommentType } from '../../types';
 
 interface IComment extends CommentType {}
@@ -16,10 +14,10 @@ const Comment = ({
     LikesCount,
     likeComment,
 }: IComment) => (
-    <li className={classes.comment}>
-        <div className={generalClasses.postTitle}>
+    <li>
+        <div>
             <ProfilePicture src={profilePicture} />
-            <div className={classes.commentText}>
+            <div>
                 <div>
                     <Username userName={userName} header={false} />
                     <CommentContent content={content} />

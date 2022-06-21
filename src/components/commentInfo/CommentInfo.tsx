@@ -1,5 +1,3 @@
-import { classes } from './CommentInfo.st.css';
-
 interface ICommentInfo {
     creationDate: Date;
     likesCount: number;
@@ -8,13 +6,9 @@ interface ICommentInfo {
 const CommentInfo = ({ creationDate, likesCount }: ICommentInfo) => {
     return (
         <div>
-            <div className={classes.infoSubtitle}>{creationDate.toDateString()}</div>
-            {likesCount > 0 ? (
-                <div className={classes.infoSubtitle}>{likesCount} like</div>
-            ) : (
-                <div className={classes.infoSubtitle}>like</div>
-            )}
-            <div className={classes.infoSubtitle}>Reply</div>
+            <div>{creationDate.toDateString()}</div>
+            {likesCount > 0 ? <div>{likesCount} like</div> : <div>like</div>}
+            <div>Reply</div>
         </div>
     );
 };
