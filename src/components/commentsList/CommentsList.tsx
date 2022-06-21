@@ -12,7 +12,6 @@ interface ICommentListProps {
 }
 
 const CommentsList = ({ comments }: ICommentListProps) => (
-    // <div className={classes.commentsBlock}>
     <ul className={classes.commentsList}>
         {comments.map(({ userName, profilePicture, content }) => (
             <Comment
@@ -23,6 +22,5 @@ const CommentsList = ({ comments }: ICommentListProps) => (
             />
         ))}
     </ul>
-    // </div>
 );
 export default CommentsList;

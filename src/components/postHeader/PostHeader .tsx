@@ -2,7 +2,7 @@ import Icon from '../icon/Icon';
 import Username from '../username/Username';
 import ProfilePicture from '../profilePicture/ProfilePicture';
 import ellipsis from '../../assets/ellipsis.svg';
-import { classes } from '../../style/comments.st.css';
+import { classes } from './PostHeader.st.css';
 
 interface IPostOwner {
     userName: string;

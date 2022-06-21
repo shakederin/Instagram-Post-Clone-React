@@ -1,6 +1,6 @@
 import LikedByContainer from '../likedByContainer/LikedByContainer';
 import PostActionBar from '../postActionBar/PostActionBar';
-import { classes } from '../../style/reply.st.css';
+import { classes } from './LikeContainer.st.css';
 
 const LikeContainer = () => {
     //state allPeopleWhoLiked

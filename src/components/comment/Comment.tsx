@@ -21,7 +21,7 @@ const Comment = ({ isOwnerComment, profilePicture, userName, content }: IComment
                     <Username userName={userName} header={false} />
                     <CommentContent content={content} />
                 </div>
-                <CommentInfo />
+                <CommentInfo commentPostDate={new Date()} commentLikesCount={0} />
             </div>
             {isOwnerComment ? <></> : <LikeCommentButton />}
         </div>

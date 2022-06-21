@@ -1,6 +1,5 @@
-import { st, classes } from '../../style/reply.st.css';
-import { classes as commentClassesNames } from '../../style/comments.st.css';
-import { classes as mainClassesNames } from '../../style/main.st.css';
+import { classes as generalClasses } from '../../style/general.st.css';
+import { st, classes } from './LikedByContainer.st.css';
 import {
     SAMPLE1_LIKED_BY_PROFILE_PICTURE,
     SAMPLE2_LIKED_BY_PROFILE_PICTURE,
@@ -24,13 +23,13 @@ const LikedByContainer = ({ allPeopleWhoLiked }: ILikedByContainer) => (
                     className={st(
                         classes.likeProfilePicture,
                         classes.otherUserLikeByPic,
-                        commentClassesNames.profilePicture
+                        generalClasses.profilePicture
                     )}
                     src={SAMPLE1_LIKED_BY_PROFILE_PICTURE}
                     alt="profile Picture"
                 ></img>
                 <img
-                    className={st(classes.likeProfilePicture, commentClassesNames.profilePicture)}
+                    className={st(classes.likeProfilePicture, generalClasses.profilePicture)}
                     src={SAMPLE2_LIKED_BY_PROFILE_PICTURE}
                     alt="profile Picture"
                     id="lastUserLikeByPic"
@@ -38,14 +37,12 @@ const LikedByContainer = ({ allPeopleWhoLiked }: ILikedByContainer) => (
             </div>
             <div className={classes.likeContentContainer}>
                 <span>Liked by</span>
-                <span className={st(mainClassesNames.boldText, commentClassesNames.text)}>
+                <span className={st(generalClasses.boldText, generalClasses.text)}>
                     {allPeopleWhoLiked.length > 1 ? (
                         <>
                             {allPeopleWhoLiked[0].userName}
-                            <span className={commentClassesNames.text}>and</span>
-                            <span
-                                className={st(mainClassesNames.boldText, commentClassesNames.text)}
-                            >
+                            <span className={generalClasses.text}>and</span>
+                            <span className={st(generalClasses.boldText, generalClasses.text)}>
                                 {allPeopleWhoLiked.length - 1} others
                             </span>
                         </>

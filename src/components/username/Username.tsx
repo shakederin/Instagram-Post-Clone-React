@@ -1,5 +1,5 @@
-import { classes as commentClasses } from '../../style/comments.st.css';
-import { classes } from '../../style/main.st.css';
+import { classes as generalClasses } from '../../style/general.st.css';
+import { classes } from './UserName.st.css';
 
 interface IUsername {
     userName: string;
@@ -8,11 +8,11 @@ interface IUsername {
 const Username = ({ userName, header }: IUsername) => (
     <>
         {header ? (
-            <span className={commentClasses.commentsHeader}>
-                <span className={classes.boldText}>{userName} &#8226; Following</span>
+            <span className={classes.commentsHeader}>
+                <span className={generalClasses.boldText}>{userName} &#8226; Following</span>
             </span>
         ) : (
-            <span className={classes.boldText}>{userName}</span>
+            <span className={generalClasses.boldText}>{userName}</span>
         )}
     </>
 );

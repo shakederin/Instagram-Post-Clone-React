@@ -1,11 +1,12 @@
 import Icon from '../icon/Icon';
 import smileSVG from '../../assets/smile.svg';
-import { st, classes } from '../../style/reply.st.css';
 import { PLACE_HOLDER } from '../../constants';
+import { st, classes as generalClasses } from '../../style/general.st.css';
+import { classes } from './InputForm.st.css';
 const InputForm = () => (
     <form className={classes.inputForm}>
         <div className={classes.inputArea}>
-            <Icon className={st(classes.svgImg, classes.smileSVG)} img={smileSVG} />
+            <Icon className={st(generalClasses.svgImg, classes.smileSVG)} img={smileSVG} />
             <input className={classes.commentInput} type="text" placeholder={PLACE_HOLDER} />
         </div>
         <button className={classes.postComment} type="submit">

@@ -1,6 +1,7 @@
 import ProfilePicture from '../profilePicture/ProfilePicture';
 import Username from '../username/Username';
-import { classes } from '../../style/comments.st.css';
+import { classes as generalClasses } from '../../style/general.st.css';
+import { classes } from './PostDescription.st.css';
 
 interface IPostDescription {
     profilePicture: string;
@@ -11,12 +12,12 @@ interface IPostDescription {
 const PostDescription = ({ profilePicture, userName, description }: IPostDescription) => {
     return (
         <div className={classes.description}>
-            <div className={classes.postTitle}>
+            <div className={generalClasses.postTitle}>
                 <ProfilePicture src={profilePicture} />
                 <div className={classes.commentText}>
                     <div>
                         <Username userName={userName} header={false} />
-                        <span className={classes.text}>{description}</span>
+                        <span className={generalClasses.text}>{description}</span>
                     </div>
                     <div className={classes.commentInfo}>10 h</div>
                 </div>

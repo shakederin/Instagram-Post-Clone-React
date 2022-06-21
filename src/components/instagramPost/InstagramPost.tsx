@@ -1,6 +1,6 @@
 import ImageContainer from '../imageContainer/ImageContainer';
 import PostLayout from '../postLayout/PostLayout';
-import { classes } from '../../style/main.st.css';
+import { classes } from './InstagramPost.st.css';
 
 // interface User {
 //     userName: string;

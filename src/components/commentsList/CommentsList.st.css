@@ -1,7 +1,3 @@
-/* .commentsBlock {
-  display: flex;
-  height: 30em;
-} */
 .commentsList {
   all: unset;
   display: flex;

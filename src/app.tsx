@@ -1,5 +1,5 @@
 import InstagramPost from './components/instagramPost/InstagramPost';
-import { st, classes } from './style/main.st.css';
+import { classes } from './style/general.st.css';
 import {
     SAMPLE_POST_IMAGE,
     SAMPLE_PROFILE_PICTURE,
@@ -9,7 +9,7 @@ import {
 } from './constants';
 
 export const App = () => (
-    <main className={st(classes.root)}>
+    <main className={classes.root}>
         <InstagramPost
             imgUrl={SAMPLE_POST_IMAGE}
             userName={SAMPLE_USER_NAME}

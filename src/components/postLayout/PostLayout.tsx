@@ -1,8 +1,8 @@
 import PostHeader from '../postHeader/PostHeader ';
 import CommentsList from '../commentsList/CommentsList';
 import PostReactionContainer from '../postReactionContainer/PostReactionContainer';
-import { classes } from '../../style/main.st.css';
 import PostDescription from '../postDescription/PostDescription';
+import { classes } from './PostLayout.st.css';
 import { useState } from 'react';
 
 interface IPostInfo {

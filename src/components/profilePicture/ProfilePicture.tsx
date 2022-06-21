@@ -1,9 +1,9 @@
-import { classes } from '../../style/comments.st.css';
+import { classes as generalClasses } from '../../style/general.st.css';
 interface IProfilePicture {
     src: string;
 }
 const ProfilePicture = ({ src }: IProfilePicture) => (
-    <img className={classes.profilePicture} src={src} />
+    <img className={generalClasses.profilePicture} src={src} />
 );
 
 export default ProfilePicture;
