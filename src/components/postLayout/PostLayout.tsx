@@ -13,13 +13,15 @@ interface IPostLayoutProps {
 
 const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
     const [comments, setComments] = useState<Comment[]>([]);
+    const addComment = (value: string) => {};
+    const likeComment = () => {};
 
     return (
         <div className={classes.postLayout}>
             <PostHeader owner={owner} />
             <PostDescription owner={owner} postData={postData} />
-            <CommentsList comments={comments} />
-            <PostReactionContainer />
+            <CommentsList comments={comments} likeComment={likeComment} />
+            <PostReactionContainer onCommentSubmit={addComment} />
         </div>
     );
 };

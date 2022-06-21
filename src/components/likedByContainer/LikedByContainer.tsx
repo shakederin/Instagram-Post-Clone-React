@@ -4,18 +4,13 @@ import {
     SAMPLE1_LIKED_BY_PROFILE_PICTURE,
     SAMPLE2_LIKED_BY_PROFILE_PICTURE,
 } from '../../constants';
+import type { User } from '../../types';
 
 interface ILikedByContainer {
-    allPeopleWhoLiked: IPeopleWhoLiked[];
+    allUsersWhoLiked: User[];
 }
 
-interface IPeopleWhoLiked {
-    // move to types
-    userName: string;
-    profilePicture: string;
-}
-
-const LikedByContainer = ({ allPeopleWhoLiked }: ILikedByContainer) => (
+const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
     <div className={classes.allLikes}>
         <div className={classes.likeByWho}>
             <div className={classes.UserLikeByPic}>
@@ -38,12 +33,12 @@ const LikedByContainer = ({ allPeopleWhoLiked }: ILikedByContainer) => (
             <div className={classes.likeContentContainer}>
                 <span>Liked by</span>
                 <span className={st(generalClasses.boldText, generalClasses.text)}>
-                    {allPeopleWhoLiked.length > 1 ? (
+                    {allUsersWhoLiked.length > 1 ? (
                         <>
-                            {allPeopleWhoLiked[0].userName}
+                            {allUsersWhoLiked[0].userName}
                             <span className={generalClasses.text}>and</span>
                             <span className={st(generalClasses.boldText, generalClasses.text)}>
-                                {allPeopleWhoLiked.length - 1} others
+                                {allUsersWhoLiked.length - 1} others
                             </span>
                         </>
                     ) : (

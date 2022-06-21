@@ -2,10 +2,13 @@ import InputForm from '../inputForm/InputForm';
 import LikeContainer from '../likeContainer/LikeContainer';
 import { classes } from './PostReactionContainer.st.css';
 
-const PostReactionContainer = () => (
+interface IPostReactionContainer {
+    onCommentSubmit: (content: string) => void;
+}
+const PostReactionContainer = ({ onCommentSubmit }: IPostReactionContainer) => (
     <div className={classes.replyArea}>
         <LikeContainer />
-        <InputForm />
+        <InputForm onSubmit={onCommentSubmit} />
     </div>
 );
 

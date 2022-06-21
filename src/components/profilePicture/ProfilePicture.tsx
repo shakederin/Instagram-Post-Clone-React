@@ -1,4 +1,5 @@
 import { classes as generalClasses } from '../../style/general.st.css';
+
 interface IProfilePicture {
     src: string;
 }
