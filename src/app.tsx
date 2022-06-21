@@ -1,5 +1,4 @@
 import InstagramPost from './components/instagramPost/InstagramPost';
-import { classes } from './style/general.st.css';
 import {
     SAMPLE_POST_IMAGE,
     SAMPLE_PROFILE_PICTURE,
@@ -7,6 +6,7 @@ import {
     SAMPLE_USER_NAME,
     SAMPLE_DATE,
 } from './constants';
+import { classes } from './style/general.st.css';
 
 const owner = {
     userName: SAMPLE_USER_NAME,
