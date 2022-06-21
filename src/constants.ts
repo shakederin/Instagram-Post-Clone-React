@@ -1,3 +1,4 @@
+export const SAMPLE_DATE = new Date();
 export const SAMPLE_USER_NAME = 'tonytoscani';
 export const SAMPLE_POST_DESCRIPTION = 'me, at the sunrise';
 export const SAMPLE_PROFILE_PICTURE =
