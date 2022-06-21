@@ -4,6 +4,7 @@ import CommentsList from '../commentsList/CommentsList';
 import PostReactionContainer from '../postReactionContainer/PostReactionContainer';
 import PostDescription from '../postDescription/PostDescription';
 import type { PostData, User, Comment } from '../../types';
+import { classes } from './PostLayout.st.css';
 
 interface IPostLayoutProps {
     owner: User;
@@ -16,7 +17,7 @@ const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
     const likeComment = () => {};
 
     return (
-        <div>
+        <div className={classes.postLayout}>
             <PostHeader owner={owner} />
             <PostDescription owner={owner} postData={postData} />
             <CommentsList comments={comments} likeComment={likeComment} />

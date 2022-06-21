@@ -1,5 +1,5 @@
 import InstagramPost from './components/instagramPost/InstagramPost';
-
+import { classes } from './style/general.st.css';
 import {
     SAMPLE_POST_IMAGE,
     SAMPLE_PROFILE_PICTURE,
@@ -15,7 +15,7 @@ const owner = {
 const postData = { description: SAMPLE_POST_DESCRIPTION, creationDate: SAMPLE_DATE };
 
 export const App = () => (
-    <main>
+    <main className={classes.root}>
         <InstagramPost owner={owner} imgUrls={[SAMPLE_POST_IMAGE]} postData={postData} />
     </main>
 );

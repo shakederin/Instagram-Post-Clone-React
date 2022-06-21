@@ -1,3 +1,4 @@
+import { classes } from './CommentsList.st.css';
 import type { Comment as IComment } from '../../types';
 import Comment from '../comment/Comment';
 
@@ -7,7 +8,7 @@ interface ICommentListProps {
 }
 
 const CommentsList = ({ comments, likeComment }: ICommentListProps) => (
-    <ul>
+    <ul className={classes.commentsList}>
         {comments.map(
             ({ user: { userName, profilePicture }, creationDate, content, LikesCount }) => (
                 <Comment

@@ -1,6 +1,7 @@
 import type { User, PostData } from '../../types';
 import ImageContainer from '../imageContainer/ImageContainer';
 import PostLayout from '../postLayout/PostLayout';
+import { classes } from './InstagramPost.st.css';
 
 interface IInstagramPost {
     owner: User;
@@ -9,7 +10,7 @@ interface IInstagramPost {
 }
 
 const InstagramPost = ({ owner, postData, imgUrls }: IInstagramPost) => (
-    <div>
+    <div className={classes.mainContainer}>
         <ImageContainer imgUrls={imgUrls} />
         <PostLayout owner={owner} postData={postData} />
     </div>

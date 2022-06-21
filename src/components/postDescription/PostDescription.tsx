@@ -1,6 +1,8 @@
 import ProfilePicture from '../profilePicture/ProfilePicture';
 import Username from '../username/Username';
+import { classes as generalClasses } from '../../style/general.st.css';
 import type { PostData, User } from '../../types';
+import { classes } from './PostDescription.st.css';
 
 interface IPostDescription {
     owner: User;
@@ -11,15 +13,15 @@ const PostDescription = ({
     postData: { creationDate, description },
 }: IPostDescription) => {
     return (
-        <div>
-            <div>
+        <div className={classes.description}>
+            <div className={generalClasses.postTitle}>
                 <ProfilePicture src={profilePicture} />
-                <div>
+                <div className={classes.commentText}>
                     <div>
                         <Username userName={userName} header={false} />
-                        <span>{description}</span>
+                        <span className={generalClasses.text}>{description}</span>
                     </div>
-                    <div>10 h</div>
+                    <div className={classes.commentInfo}>10 h</div>
                 </div>
             </div>
         </div>

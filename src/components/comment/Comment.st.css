@@ -1,0 +1,17 @@
+.comment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4em;
+  margin-bottom: 1.5em;
+}
+
+.commentText {
+  margin: 0;
+  padding: 0em;
+  font-weight: 400;
+  margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

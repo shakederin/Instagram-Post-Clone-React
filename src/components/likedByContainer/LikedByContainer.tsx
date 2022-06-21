@@ -1,3 +1,5 @@
+import { classes as generalClasses } from '../../style/general.st.css';
+import { st, classes } from './LikedByContainer.st.css';
 import {
     SAMPLE1_LIKED_BY_PROFILE_PICTURE,
     SAMPLE2_LIKED_BY_PROFILE_PICTURE,
@@ -9,24 +11,35 @@ interface ILikedByContainer {
 }
 
 const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
-    <div>
-        <div>
-            <div>
-                <img src={SAMPLE1_LIKED_BY_PROFILE_PICTURE} alt="profile Picture"></img>
+    <div className={classes.allLikes}>
+        <div className={classes.likeByWho}>
+            <div className={classes.UserLikeByPic}>
                 <img
+                    className={st(
+                        classes.likeProfilePicture,
+                        classes.otherUserLikeByPic,
+                        generalClasses.profilePicture
+                    )}
+                    src={SAMPLE1_LIKED_BY_PROFILE_PICTURE}
+                    alt="profile Picture"
+                ></img>
+                <img
+                    className={st(classes.likeProfilePicture, generalClasses.profilePicture)}
                     src={SAMPLE2_LIKED_BY_PROFILE_PICTURE}
                     alt="profile Picture"
                     id="lastUserLikeByPic"
                 ></img>
             </div>
-            <div>
+            <div className={classes.likeContentContainer}>
                 <span>Liked by</span>
-                <span>
+                <span className={st(generalClasses.boldText, generalClasses.text)}>
                     {allUsersWhoLiked.length > 1 ? (
                         <>
                             {allUsersWhoLiked[0].userName}
-                            <span>and</span>
-                            <span>{allUsersWhoLiked.length - 1} others</span>
+                            <span className={generalClasses.text}>and</span>
+                            <span className={st(generalClasses.boldText, generalClasses.text)}>
+                                {allUsersWhoLiked.length - 1} others
+                            </span>
                         </>
                     ) : (
                         'yonni'
@@ -34,7 +47,7 @@ const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
                 </span>
             </div>
         </div>
-        <div>18 HOURS AGO</div>
+        <div className={classes.hoursAgo}>18 HOURS AGO</div>
     </div>
 );
 
