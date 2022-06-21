@@ -8,14 +8,14 @@ import {
     SAMPLE_DATE,
 } from './constants';
 
+const owner = {
+    userName: SAMPLE_USER_NAME,
+    profilePicture: SAMPLE_PROFILE_PICTURE,
+};
+const postData = { description: SAMPLE_POST_DESCRIPTION, creationDate: SAMPLE_DATE };
+
 export const App = () => (
     <main className={classes.root}>
-        <InstagramPost
-            imgUrl={SAMPLE_POST_IMAGE}
-            userName={SAMPLE_USER_NAME}
-            description={SAMPLE_POST_DESCRIPTION}
-            profilePicture={SAMPLE_PROFILE_PICTURE}
-            creationDate={SAMPLE_DATE}
-        />
+        <InstagramPost owner={owner} imgUrls={[SAMPLE_POST_IMAGE]} postData={postData} />
     </main>
 );

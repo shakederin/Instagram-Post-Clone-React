@@ -1,19 +1,15 @@
 import Comment from '../comment/Comment';
 import { classes } from './CommentsList.st.css';
-
-type Comment = {
-    userName: string;
-    profilePicture: string;
-    content: string;
-};
+import type { Comment as IComment } from '../../types';
+import { useState } from 'react';
 
 interface ICommentListProps {
-    comments: Comment[] | [];
+    comments: IComment[];
 }
 
 const CommentsList = ({ comments }: ICommentListProps) => (
     <ul className={classes.commentsList}>
-        {comments.map(({ userName, profilePicture, content }) => (
+        {comments.map(({ user: { userName, profilePicture }, content }) => (
             <Comment
                 isOwnerComment={true}
                 profilePicture={profilePicture}

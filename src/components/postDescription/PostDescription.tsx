@@ -1,15 +1,17 @@
 import ProfilePicture from '../profilePicture/ProfilePicture';
 import Username from '../username/Username';
 import { classes as generalClasses } from '../../style/general.st.css';
+import type { PostData, User } from '../../types';
 import { classes } from './PostDescription.st.css';
 
 interface IPostDescription {
-    profilePicture: string;
-    userName: string;
-    description: string;
-    creationDate: Date;
+    owner: User;
+    postData: PostData;
 }
-const PostDescription = ({ profilePicture, userName, description }: IPostDescription) => {
+const PostDescription = ({
+    owner: { userName, profilePicture },
+    postData: { creationDate, description },
+}: IPostDescription) => {
     return (
         <div className={classes.description}>
             <div className={generalClasses.postTitle}>

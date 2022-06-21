@@ -1,39 +1,24 @@
+import { useState } from 'react';
 import PostHeader from '../postHeader/PostHeader ';
 import CommentsList from '../commentsList/CommentsList';
 import PostReactionContainer from '../postReactionContainer/PostReactionContainer';
 import PostDescription from '../postDescription/PostDescription';
+import type { PostData, User, Comment } from '../../types';
 import { classes } from './PostLayout.st.css';
-import { useState } from 'react';
 
-interface IPostInfo {
-    userName: string;
-    profilePicture: string;
-    description: string;
-    creationDate: Date;
+interface IPostLayoutProps {
+    owner: User;
+    postData: PostData;
 }
 
-// type Comment = {
-//     userName: string;
-//     profilePicture: string;
-//     content: string;
-// };
+const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
+    const [comments, setComments] = useState<Comment[]>([]);
 
-// interface ICommentListProps {
-//     comments: Comment[];
-// }
-
-const PostLayout = ({ userName, description, profilePicture, creationDate }: IPostInfo) => {
-    const [state, _setState] = useState([]);
     return (
         <div className={classes.postLayout}>
-            <PostHeader userName={userName} profilePicture={profilePicture} />
-            <PostDescription
-                profilePicture={profilePicture}
-                userName={userName}
-                description={description}
-                creationDate={creationDate}
-            />
-            <CommentsList comments={state} />
+            <PostHeader owner={owner} />
+            <PostDescription owner={owner} postData={postData} />
+            <CommentsList comments={comments} />
             <PostReactionContainer />
         </div>
     );

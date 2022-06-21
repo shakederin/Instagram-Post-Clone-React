@@ -2,14 +2,14 @@ import Icon from '../icon/Icon';
 import Username from '../username/Username';
 import ProfilePicture from '../profilePicture/ProfilePicture';
 import ellipsis from '../../assets/ellipsis.svg';
+import type { User } from '../../types';
 import { classes } from './PostHeader.st.css';
 
-interface IPostOwner {
-    userName: string;
-    profilePicture: string;
+interface IPostHeader {
+    owner: User;
 }
 
-const PostHeader = ({ userName, profilePicture }: IPostOwner) => (
+const PostHeader = ({ owner: { userName, profilePicture } }: IPostHeader) => (
     <div className={classes.header}>
         <div className={classes.profilePictureHeaderBlock}>
             <ProfilePicture src={profilePicture} />
