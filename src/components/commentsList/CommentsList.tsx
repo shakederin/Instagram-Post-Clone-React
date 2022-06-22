@@ -1,25 +1,31 @@
+import { nanoid } from 'nanoid';
+import Comment from '../comment/Comment';
 import { classes } from './CommentsList.st.css';
 import type { Comment as IComment } from '../../types';
-import Comment from '../comment/Comment';
 
 interface ICommentListProps {
     comments: IComment[];
-    likeComment: () => void;
+    likeComment: (date: Date, userName: string) => void;
 }
 
-const CommentsList = ({ comments, likeComment }: ICommentListProps) => (
-    <ul className={classes.commentsList}>
-        {comments.map(
-            ({ user: { userName, profilePicture }, creationDate, content, LikesCount }) => (
-                <Comment
-                    user={{ userName, profilePicture }}
-                    creationDate={creationDate}
-                    content={content}
-                    LikesCount={LikesCount}
-                    likeComment={likeComment}
-                />
-            )
-        )}
-    </ul>
-);
+const CommentsList = ({ comments, likeComment }: ICommentListProps) => {
+    console.log(comments);
+
+    return (
+        <ul className={classes.commentsList}>
+            {comments.map(
+                ({ user: { userName, profilePicture }, creationDate, content, LikedBy }) => (
+                    <Comment
+                        user={{ userName, profilePicture }}
+                        creationDate={creationDate}
+                        content={content}
+                        LikedBy={LikedBy}
+                        likeComment={likeComment}
+                        key={nanoid()}
+                    />
+                )
+            )}
+        </ul>
+    );
+};
 export default CommentsList;

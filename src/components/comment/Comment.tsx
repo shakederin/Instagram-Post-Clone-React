@@ -13,22 +13,31 @@ const Comment = ({
     user: { userName, profilePicture },
     content,
     creationDate,
-    LikesCount,
+    LikedBy,
     likeComment,
-}: IComment) => (
-    <li className={classes.comment}>
-        <div className={generalClasses.postTitle}>
-            <ProfilePicture src={profilePicture} />
-            <div className={classes.commentText}>
-                <div>
-                    <Username userName={userName} header={false} />
-                    <CommentContent content={content} />
+}: IComment) => {
+    console.log(LikedBy, 'Comment');
+    return (
+        <li className={classes.comment}>
+            <div className={generalClasses.postTitle}>
+                <ProfilePicture src={profilePicture} />
+                <div className={classes.commentText}>
+                    <div>
+                        <Username userName={userName} header={false} />
+                        <CommentContent content={content} />
+                    </div>
+                    <div className={classes.commentContentContainer}>
+                        <CommentInfo creationDate={creationDate} LikedBy={LikedBy} />
+                    </div>
                 </div>
-                <CommentInfo creationDate={creationDate} likesCount={LikesCount} />
             </div>
-            <LikeCommentButton likeComment={likeComment} />
-        </div>
-    </li>
-);
-
+            <LikeCommentButton
+                likeComment={likeComment}
+                creationDate={creationDate}
+                LikedBy={LikedBy}
+                userName={userName}
+            />
+        </li>
+    );
+};
 export default Comment;

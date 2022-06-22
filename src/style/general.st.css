@@ -5,6 +5,7 @@
 
 .profilePicture {
   height: 2em;
+  width: 2em;
   margin-left: 0.5em;
   border-radius: 50%;
   border: double 1em transparent;

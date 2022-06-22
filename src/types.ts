@@ -12,6 +12,6 @@ export type Comment = {
     user: User;
     content: string;
     creationDate: Date;
-    LikesCount: number;
-    likeComment: () => void;
+    LikedBy: string[];
+    likeComment: (date: Date, userName: string) => void;
 };
