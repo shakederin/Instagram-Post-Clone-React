@@ -13,7 +13,6 @@ interface IPostLayoutProps {
 
 const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
     const [comments, setComments] = useState<Comment[]>([]);
-    console.log(comments);
 
     const addComment = (comment: Comment) => {
         setComments((precomments) => [...precomments, comment]);

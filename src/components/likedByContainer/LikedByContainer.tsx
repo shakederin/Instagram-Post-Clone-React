@@ -33,12 +33,12 @@ const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
             <div className={classes.likeContentContainer}>
                 <span>Liked by</span>
                 <span className={st(generalClasses.boldText, generalClasses.text)}>
-                    {allUsersWhoLiked.length > 1 ? (
+                    {allUsersWhoLiked.length ? (
                         <>
                             {allUsersWhoLiked[0].userName}
                             <span className={generalClasses.text}>and</span>
                             <span className={st(generalClasses.boldText, generalClasses.text)}>
-                                {allUsersWhoLiked.length - 1} others
+                                {allUsersWhoLiked.length} others
                             </span>
                         </>
                     ) : (

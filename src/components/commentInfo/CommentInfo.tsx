@@ -37,18 +37,15 @@ const CommentInfo = ({ creationDate, LikedBy }: ICommentInfo) => {
         const SecondsPassedFromCreation = new Date(timePassedFromCreation).getSeconds();
         const minutsPassedFromCreation = new Date(timePassedFromCreation).getMinutes();
         const HoursPassedFromCreation = new Date(timePassedFromCreation).getHours();
-        console.log(SecondsPassedFromCreation);
+        let timeAgoPrompt;
         if (HoursPassedFromCreation > 2) {
-            setTimeAgo(`${HoursPassedFromCreation} h`);
-            return;
+            timeAgoPrompt = `${HoursPassedFromCreation} h`;
+        } else if (minutsPassedFromCreation > 0) {
+            timeAgoPrompt = `${minutsPassedFromCreation} m`;
+        } else {
+            timeAgoPrompt = `${SecondsPassedFromCreation} s`;
         }
-        if (minutsPassedFromCreation > 0) {
-            setTimeAgo(`${minutsPassedFromCreation} m`);
-            return;
-        }
-        if (SecondsPassedFromCreation > 0) {
-            setTimeAgo(`${SecondsPassedFromCreation} s`);
-        }
+        setTimeAgo(timeAgoPrompt);
     };
     return (
         <div className={classes.commentInfo}>

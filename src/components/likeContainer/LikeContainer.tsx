@@ -6,10 +6,25 @@ import { classes } from './LikeContainer.st.css';
 
 const LikeContainer = () => {
     const [usersWhoLiked, setUsersWhoLiked] = useState<User[]>([]);
-    const likePost = () => {}; // unshift you to the state
+
+    const likePost = (user: User) => {
+        let currentUsersWhoLiked = [...usersWhoLiked];
+        let indexOfUser: number = -1;
+        for (let i = 0; i < usersWhoLiked.length; i++) {
+            if (usersWhoLiked[i].userName === user.userName) {
+                indexOfUser = i;
+            }
+        }
+        if (indexOfUser < 0) {
+            setUsersWhoLiked([...currentUsersWhoLiked, user]);
+        } else {
+            currentUsersWhoLiked.splice(indexOfUser, 1);
+            setUsersWhoLiked([...currentUsersWhoLiked]);
+        }
+    };
     return (
         <div className={classes.likeContainer}>
-            <PostActionBar likePost={() => likePost()} />
+            <PostActionBar likePost={likePost} />
             <LikedByContainer allUsersWhoLiked={usersWhoLiked} />
         </div>
     );

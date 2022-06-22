@@ -8,24 +8,19 @@ interface ICommentListProps {
     likeComment: (date: Date, userName: string) => void;
 }
 
-const CommentsList = ({ comments, likeComment }: ICommentListProps) => {
-    console.log(comments);
+const CommentsList = ({ comments, likeComment }: ICommentListProps) => (
+    <ul className={classes.commentsList}>
+        {comments.map(({ user: { userName, profilePicture }, creationDate, content, LikedBy }) => (
+            <Comment
+                user={{ userName, profilePicture }}
+                creationDate={creationDate}
+                content={content}
+                LikedBy={LikedBy}
+                likeComment={likeComment}
+                key={nanoid()}
+            />
+        ))}
+    </ul>
+);
 
-    return (
-        <ul className={classes.commentsList}>
-            {comments.map(
-                ({ user: { userName, profilePicture }, creationDate, content, LikedBy }) => (
-                    <Comment
-                        user={{ userName, profilePicture }}
-                        creationDate={creationDate}
-                        content={content}
-                        LikedBy={LikedBy}
-                        likeComment={likeComment}
-                        key={nanoid()}
-                    />
-                )
-            )}
-        </ul>
-    );
-};
 export default CommentsList;

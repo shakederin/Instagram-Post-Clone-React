@@ -16,7 +16,6 @@ const Comment = ({
     LikedBy,
     likeComment,
 }: IComment) => {
-    console.log(LikedBy, 'Comment');
     return (
         <li className={classes.comment}>
             <div className={generalClasses.postTitle}>
