@@ -6,6 +6,9 @@ import {
     SAMPLE_POST_DESCRIPTION,
     SAMPLE_USER_NAME,
     SAMPLE_DATE,
+    SAMPLE_POST_IMAGE2,
+    SAMPLE_POST_IMAGE3,
+    SAMPLE_POST_IMAGE4,
 } from './constants';
 
 const owner = {
@@ -16,6 +19,15 @@ const postData = { description: SAMPLE_POST_DESCRIPTION, creationDate: SAMPLE_DA
 
 export const App = () => (
     <main className={classes.root}>
-        <InstagramPost owner={owner} imgUrls={[SAMPLE_POST_IMAGE]} postData={postData} />
+        <InstagramPost
+            owner={owner}
+            imgUrls={[
+                SAMPLE_POST_IMAGE,
+                SAMPLE_POST_IMAGE2,
+                SAMPLE_POST_IMAGE3,
+                SAMPLE_POST_IMAGE4,
+            ]}
+            postData={postData}
+        />
     </main>
 );
