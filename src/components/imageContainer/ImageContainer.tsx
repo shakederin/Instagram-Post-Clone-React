@@ -2,6 +2,7 @@ import ScrollButton from '../scrollButton/ScrollButton';
 import arrow from '../../assets/scroll-arrow.svg';
 import { st, classes } from './ImageContainer.st.css';
 import { useState } from 'react';
+import PhotoIndexIndicator from '../photoIndexIndicator/PhotoIndexIndicator';
 
 interface IImageContainerProps {
     imgUrls: string[];
@@ -9,13 +10,8 @@ interface IImageContainerProps {
 const ImageContainer = ({ imgUrls }: IImageContainerProps) => {
     const [currentImgUrlIndex, setCurrentImgUrlIndex] = useState(0);
 
-    const scrollImg = (action: string) => {
-        let nextIndex;
-        if (action === 'scroll right') {
-            nextIndex = currentImgUrlIndex + 1;
-        } else {
-            nextIndex = currentImgUrlIndex - 1;
-        }
+    const scrollImg = (action: number) => {
+        const nextIndex = currentImgUrlIndex + action;
         const imgUrlsLength = imgUrls.length;
         setCurrentImgUrlIndex(nextIndex - imgUrlsLength * Math.floor(nextIndex / imgUrlsLength));
     };
@@ -27,15 +23,17 @@ const ImageContainer = ({ imgUrls }: IImageContainerProps) => {
             >
                 <div
                     onClick={() => {
-                        scrollImg('scroll left');
+                        scrollImg(-1);
                     }}
                 >
                     <ScrollButton className={classes.arrow} svgPath={arrow} />
                 </div>
-                <div></div>
+
+                <PhotoIndexIndicator imgUrls={imgUrls} currentImgUrlIndex={currentImgUrlIndex} />
+
                 <div
                     onClick={() => {
-                        scrollImg('scroll right');
+                        scrollImg(1);
                     }}
                 >
                     <ScrollButton
