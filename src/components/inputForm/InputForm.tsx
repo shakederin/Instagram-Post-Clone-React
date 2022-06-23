@@ -1,14 +1,14 @@
-import { PLACE_HOLDER } from '../../constants';
+import { useRef } from 'react';
 import Icon from '../icon/Icon';
 import smileSVG from '../../assets/smile.svg';
+import { getRandomUser } from '../../utils/getRandomUser';
+import { PLACE_HOLDER, POST } from '../../constants';
 import { st, classes as generalClasses } from '../../style/general.st.css';
 import { classes } from './InputForm.st.css';
 import type { Comment } from '../../types';
-import { getRandomUser } from '../../utils/getRandomUser';
-import { useRef } from 'react';
 
 interface IInputForm {
-    likeComment: (date: Date, userName: string) => void;
+    likeComment: (date: number, userName: string) => void;
     onSubmit: (comment: Comment) => void;
 }
 
@@ -24,7 +24,7 @@ const InputForm = ({ likeComment, onSubmit }: IInputForm) => {
             const newComment: Comment = {
                 user: randomUser,
                 content: inputElement.current.value,
-                creationDate: new Date(),
+                creationDate: Date.now(),
                 LikedBy: [],
                 likeComment: likeComment,
             };
@@ -44,7 +44,7 @@ const InputForm = ({ likeComment, onSubmit }: IInputForm) => {
                 />
             </div>
             <button className={classes.postComment} type="submit">
-                Post
+                {POST}
             </button>
         </form>
     );

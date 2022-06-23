@@ -1,31 +1,25 @@
+import { MOCK_DATA, POST_IMAGE_SAMPLES, SAMPLES_LIKED_BY_PROFILE_PICTURE } from './mockText';
 import InstagramPost from './components/instagramPost/InstagramPost';
 import { classes } from './style/general.st.css';
-import {
-    SAMPLE_POST_IMAGE,
-    SAMPLE_PROFILE_PICTURE,
-    SAMPLE_POST_DESCRIPTION,
-    SAMPLE_USER_NAME,
-    SAMPLE_DATE,
-    SAMPLE_POST_IMAGE2,
-    SAMPLE_POST_IMAGE3,
-    SAMPLE_POST_IMAGE4,
-} from './constants';
 
 const owner = {
-    userName: SAMPLE_USER_NAME,
-    profilePicture: SAMPLE_PROFILE_PICTURE,
+    userName: MOCK_DATA.SAMPLE_USER_NAME,
+    profilePicture: SAMPLES_LIKED_BY_PROFILE_PICTURE[0],
 };
-const postData = { description: SAMPLE_POST_DESCRIPTION, creationDate: SAMPLE_DATE };
+const postData = {
+    description: MOCK_DATA.SAMPLE_POST_DESCRIPTION,
+    creationDate: MOCK_DATA.SAMPLE_DATE,
+};
 
 export const App = () => (
     <main className={classes.root}>
         <InstagramPost
             owner={owner}
             imgUrls={[
-                SAMPLE_POST_IMAGE,
-                SAMPLE_POST_IMAGE2,
-                SAMPLE_POST_IMAGE3,
-                SAMPLE_POST_IMAGE4,
+                POST_IMAGE_SAMPLES[0],
+                POST_IMAGE_SAMPLES[1],
+                POST_IMAGE_SAMPLES[2],
+                POST_IMAGE_SAMPLES[3],
             ]}
             postData={postData}
         />

@@ -17,7 +17,7 @@ const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
     const addComment = (comment: Comment) => {
         setComments((precomments) => [...precomments, comment]);
     };
-    const likeComment = (date: Date, userName: string) => {
+    const likeComment = (date: number, userName: string) => {
         const newState = [...comments];
         for (const comment of newState) {
             if (comment.creationDate === date) {

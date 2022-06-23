@@ -1,9 +1,7 @@
-import { classes as generalClasses } from '../../style/general.st.css';
+import { MOCK_DATA, SAMPLES_LIKED_BY_PROFILE_PICTURE } from '../../mockText';
+import { AND, LIKED_BY, OTHER, PROFILE_PICTURE_ALT } from '../../constants';
 import { st, classes } from './LikedByContainer.st.css';
-import {
-    SAMPLE1_LIKED_BY_PROFILE_PICTURE,
-    SAMPLE2_LIKED_BY_PROFILE_PICTURE,
-} from '../../constants';
+import { classes as generalClasses } from '../../style/general.st.css';
 import type { User } from '../../types';
 
 interface ILikedByContainer {
@@ -20,34 +18,33 @@ const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
                         classes.otherUserLikeByPic,
                         generalClasses.profilePicture
                     )}
-                    src={SAMPLE1_LIKED_BY_PROFILE_PICTURE}
-                    alt="profile Picture"
+                    src={SAMPLES_LIKED_BY_PROFILE_PICTURE[1]}
+                    alt={PROFILE_PICTURE_ALT}
                 ></img>
                 <img
                     className={st(classes.likeProfilePicture, generalClasses.profilePicture)}
-                    src={SAMPLE2_LIKED_BY_PROFILE_PICTURE}
-                    alt="profile Picture"
-                    id="lastUserLikeByPic"
+                    src={SAMPLES_LIKED_BY_PROFILE_PICTURE[2]}
+                    alt={PROFILE_PICTURE_ALT}
                 ></img>
             </div>
             <div className={classes.likeContentContainer}>
-                <span>Liked by</span>
+                <span>{LIKED_BY}</span>
                 <span className={st(generalClasses.boldText, generalClasses.text)}>
                     {allUsersWhoLiked.length ? (
                         <>
                             {allUsersWhoLiked[0].userName}
-                            <span className={generalClasses.text}>and</span>
+                            <span className={generalClasses.text}>{AND}</span>
                             <span className={st(generalClasses.boldText, generalClasses.text)}>
-                                {allUsersWhoLiked.length} others
+                                {allUsersWhoLiked.length} {OTHER}
                             </span>
                         </>
                     ) : (
-                        'yonni'
+                        MOCK_DATA.SAMPLE_NAME
                     )}
                 </span>
             </div>
         </div>
-        <div className={classes.hoursAgo}>18 HOURS AGO</div>
+        <div className={classes.hoursAgo}>{MOCK_DATA.SAMPLE_HOURS_AGO}</div>
     </div>
 );
 

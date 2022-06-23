@@ -1,31 +1,23 @@
 import { useEffect, useState } from 'react';
+import { FIVE_SECONDS, LIKE, ONE_MINUTE, REPLY } from '../../constants';
 import { classes } from './CommentInfo.st.css';
 
 interface ICommentInfo {
-    creationDate: Date;
+    creationDate: number;
     LikedBy: string[];
 }
 
 const CommentInfo = ({ creationDate, LikedBy }: ICommentInfo) => {
-    const timePassedFromCreation = new Date().getTime() - creationDate.getTime();
-    const SecondsPassedFromCreation = new Date(timePassedFromCreation).getSeconds();
-    const minutsPassedFromCreation = new Date(timePassedFromCreation).getMinutes();
-    const HoursPassedFromCreation = new Date(timePassedFromCreation).getHours();
-    const currentValue =
-        HoursPassedFromCreation > 2
-            ? `${HoursPassedFromCreation - 2} h`
-            : minutsPassedFromCreation > 0
-            ? `${minutsPassedFromCreation} m`
-            : `${SecondsPassedFromCreation} s`;
-    const [timeAgo, setTimeAgo] = useState<string>(currentValue);
+    const SecondsPassedFromCreation = Math.floor((Date.now() - creationDate) / 1000);
+    const [timeAgo, setTimeAgo] = useState<string>(`${SecondsPassedFromCreation} s`);
 
     useEffect(() => {
-        const secondesInterval = setInterval(updateTimeAgo, 5000);
+        const secondesInterval = setInterval(updateTimeAgo, FIVE_SECONDS);
         let minutesInterval: number;
         setTimeout(() => {
             clearInterval(secondesInterval);
-            minutesInterval = setInterval(updateTimeAgo, 1000 * 60);
-        }, 1000 * 60);
+            minutesInterval = setInterval(updateTimeAgo, ONE_MINUTE);
+        }, ONE_MINUTE);
         return () => {
             clearInterval(secondesInterval);
             clearInterval(minutesInterval);
@@ -33,29 +25,35 @@ const CommentInfo = ({ creationDate, LikedBy }: ICommentInfo) => {
     }, []);
 
     const updateTimeAgo = () => {
-        const timePassedFromCreation = new Date().getTime() - creationDate.getTime();
-        const SecondsPassedFromCreation = new Date(timePassedFromCreation).getSeconds();
-        const minutsPassedFromCreation = new Date(timePassedFromCreation).getMinutes();
-        const HoursPassedFromCreation = new Date(timePassedFromCreation).getHours();
+        setTimeAgo(getTimeAgo(creationDate));
+    };
+
+    const getTimeAgo = (creationDate: number) => {
+        const SecondsPassedFromCreation = Math.floor((Date.now() - creationDate) / 1000);
+        const minutsPassedFromCreation = Math.floor(SecondsPassedFromCreation / 60);
+        const HoursPassedFromCreation = Math.floor(SecondsPassedFromCreation / 3600) - 2;
+
         let timeAgoPrompt;
-        if (HoursPassedFromCreation > 2) {
+        if (HoursPassedFromCreation > 0) {
             timeAgoPrompt = `${HoursPassedFromCreation} h`;
         } else if (minutsPassedFromCreation > 0) {
             timeAgoPrompt = `${minutsPassedFromCreation} m`;
         } else {
             timeAgoPrompt = `${SecondsPassedFromCreation} s`;
         }
-        setTimeAgo(timeAgoPrompt);
+        return timeAgoPrompt;
     };
     return (
         <div className={classes.commentInfo}>
             <div className={classes.infoSubtitle}>{timeAgo}</div>
             {LikedBy.length > 0 ? (
-                <div className={classes.infoSubtitle}>{LikedBy.length} like</div>
+                <div className={classes.infoSubtitle}>
+                    {LikedBy.length} {LIKE}
+                </div>
             ) : (
-                <div className={classes.infoSubtitle}>like</div>
+                <div className={classes.infoSubtitle}>{LIKE}</div>
             )}
-            <div className={classes.infoSubtitle}>Reply</div>
+            <div className={classes.infoSubtitle}>{REPLY}</div>
         </div>
     );
 };

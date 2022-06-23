@@ -11,7 +11,7 @@ export interface PostData {
 export type Comment = {
     user: User;
     content: string;
-    creationDate: Date;
+    creationDate: number;
     LikedBy: string[];
-    likeComment: (date: Date, userName: string) => void;
+    likeComment: (date: number, userName: string) => void;
 };

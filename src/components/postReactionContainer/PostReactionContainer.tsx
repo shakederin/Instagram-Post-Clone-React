@@ -4,7 +4,7 @@ import LikeContainer from '../likeContainer/LikeContainer';
 import { classes } from './PostReactionContainer.st.css';
 
 interface IPostReactionContainer {
-    likeComment: (date: Date, userName: string) => void;
+    likeComment: (date: number, userName: string) => void;
     onCommentSubmit: (comment: Comment) => void;
 }
 const PostReactionContainer = ({ likeComment, onCommentSubmit }: IPostReactionContainer) => (

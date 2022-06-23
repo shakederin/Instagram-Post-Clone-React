@@ -5,7 +5,7 @@ import type { Comment as IComment } from '../../types';
 
 interface ICommentListProps {
     comments: IComment[];
-    likeComment: (date: Date, userName: string) => void;
+    likeComment: (date: number, userName: string) => void;
 }
 
 const CommentsList = ({ comments, likeComment }: ICommentListProps) => (

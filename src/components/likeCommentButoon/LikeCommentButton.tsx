@@ -5,9 +5,9 @@ import { classes } from './LikeCommentButton.st.css';
 
 interface ILikeCommentButton {
     userName: string;
-    creationDate: Date;
+    creationDate: number;
     LikedBy: string[];
-    likeComment: (date: Date, userName: string) => void;
+    likeComment: (date: number, userName: string) => void;
 }
 const LikeCommentButton = ({
     userName,
