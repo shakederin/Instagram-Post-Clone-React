@@ -6,10 +6,10 @@ import type { User } from '../../types';
 
 const LikeContainer = () => {
     const [usersWhoLiked, setUsersWhoLiked] = useState<User[]>([]);
-    const likePost = () => {}; // unshift you to the state
+    const likePost = (user: User) => {};
     return (
         <div className={classes.root}>
-            <PostActionBar likePost={() => likePost()} />
+            <PostActionBar likePost={likePost} />
             <LikedByContainer allUsersWhoLiked={usersWhoLiked} />
         </div>
     );

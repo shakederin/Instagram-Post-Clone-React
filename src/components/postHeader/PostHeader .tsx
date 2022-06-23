@@ -1,5 +1,5 @@
 import Icon from '../icon/Icon';
-import Username from '../username/Username';
+import UserName from '../username/Username';
 import ProfilePicture from '../profilePicture/ProfilePicture';
 import ellipsis from '../../assets/ellipsis.svg';
 import { classes } from './PostHeader.st.css';
@@ -13,7 +13,7 @@ const PostHeader = ({ owner: { userName, profilePicture } }: IPostHeader) => (
     <div className={classes.root}>
         <div className={classes.profilePictureHeaderBlock}>
             <ProfilePicture src={profilePicture} />
-            <Username userName={userName} header={true} />
+            <UserName userName={userName} header={true} />
         </div>
         <Icon className={classes.ellipsis} img={ellipsis} />
     </div>
