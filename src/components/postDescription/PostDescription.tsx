@@ -21,7 +21,7 @@ const PostDescription = ({
                         <Username userName={userName} header={false} />
                         <span className={generalClasses.text}>{description}</span>
                     </div>
-                    <div className={classes.commentInfo}>10 h</div>
+                    <div className={classes.commentInfo}>3 d</div>
                 </div>
             </div>
         </div>
