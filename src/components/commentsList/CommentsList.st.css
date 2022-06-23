@@ -1,4 +1,4 @@
-.commentsList {
+.root {
   all: unset;
   display: flex;
   height: 30em;
@@ -10,6 +10,6 @@
   overflow: scroll;
 }
 
-.commentsList::-webkit-scrollbar {
+.root::-webkit-scrollbar {
   display: none;
 }

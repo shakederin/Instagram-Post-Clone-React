@@ -8,7 +8,7 @@ const LikeContainer = () => {
     const [usersWhoLiked, setUsersWhoLiked] = useState<User[]>([]);
     const likePost = () => {}; // unshift you to the state
     return (
-        <div className={classes.likeContainer}>
+        <div className={classes.root}>
             <PostActionBar likePost={() => likePost()} />
             <LikedByContainer allUsersWhoLiked={usersWhoLiked} />
         </div>

@@ -17,7 +17,7 @@ const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
     const likeComment = () => {};
 
     return (
-        <div className={classes.postLayout}>
+        <div className={classes.root}>
             <PostHeader owner={owner} />
             <PostDescription owner={owner} postData={postData} />
             <CommentsList comments={comments} likeComment={likeComment} />

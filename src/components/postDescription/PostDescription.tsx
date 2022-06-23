@@ -13,7 +13,7 @@ const PostDescription = ({
     postData: { creationDate, description },
 }: IPostDescription) => {
     return (
-        <div className={classes.description}>
+        <div className={classes.root}>
             <div className={generalClasses.postTitle}>
                 <ProfilePicture src={profilePicture} />
                 <div className={classes.commentText}>

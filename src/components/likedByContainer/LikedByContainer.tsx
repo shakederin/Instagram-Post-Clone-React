@@ -11,7 +11,7 @@ interface ILikedByContainer {
 }
 
 const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
-    <div className={classes.allLikes}>
+    <div className={classes.root}>
         <div className={classes.likeByWho}>
             <div className={classes.UserLikeByPic}>
                 <img

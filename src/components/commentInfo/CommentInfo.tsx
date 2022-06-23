@@ -7,7 +7,7 @@ interface ICommentInfo {
 
 const CommentInfo = ({ creationDate, likesCount }: ICommentInfo) => {
     return (
-        <div>
+        <div className={classes.root}>
             <div className={classes.infoSubtitle}>{creationDate.toDateString()}</div>
             {likesCount > 0 ? (
                 <div className={classes.infoSubtitle}>{likesCount} like</div>

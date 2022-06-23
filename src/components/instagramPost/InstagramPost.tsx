@@ -10,7 +10,7 @@ interface IInstagramPost {
 }
 
 const InstagramPost = ({ owner, postData, imgUrls }: IInstagramPost) => (
-    <div className={classes.mainContainer}>
+    <div className={classes.root}>
         <ImageContainer imgUrls={imgUrls} />
         <PostLayout owner={owner} postData={postData} />
     </div>

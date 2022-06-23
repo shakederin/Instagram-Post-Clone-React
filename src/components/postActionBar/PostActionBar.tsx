@@ -10,7 +10,7 @@ interface IPostActionBar {
 }
 
 const PostActionBar = ({ likePost }: IPostActionBar) => (
-    <div className={classes.icons}>
+    <div className={classes.root}>
         <div>
             <Icon img={heart} className={generalClasses.svgImg} />
             <svg

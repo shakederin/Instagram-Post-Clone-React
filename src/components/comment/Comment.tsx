@@ -16,7 +16,7 @@ const Comment = ({
     LikesCount,
     likeComment,
 }: IComment) => (
-    <li className={classes.comment}>
+    <li className={classes.root}>
         <div className={generalClasses.postTitle}>
             <ProfilePicture src={profilePicture} />
             <div className={classes.commentText}>

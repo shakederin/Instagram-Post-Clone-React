@@ -8,7 +8,7 @@ interface ICommentListProps {
 }
 
 const CommentsList = ({ comments, likeComment }: ICommentListProps) => (
-    <ul className={classes.commentsList}>
+    <ul className={classes.root}>
         {comments.map(
             ({ user: { userName, profilePicture }, creationDate, content, LikesCount }) => (
                 <Comment

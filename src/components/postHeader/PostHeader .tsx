@@ -10,7 +10,7 @@ interface IPostHeader {
 }
 
 const PostHeader = ({ owner: { userName, profilePicture } }: IPostHeader) => (
-    <div className={classes.header}>
+    <div className={classes.root}>
         <div className={classes.profilePictureHeaderBlock}>
             <ProfilePicture src={profilePicture} />
             <Username userName={userName} header={true} />

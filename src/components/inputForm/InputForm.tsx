@@ -9,7 +9,7 @@ interface IInputForm {
 }
 
 const InputForm = ({ onSubmit }: IInputForm) => (
-    <form className={classes.inputForm}>
+    <form className={classes.root}>
         <div className={classes.inputArea}>
             <Icon className={st(generalClasses.svgImg, classes.smileSVG)} img={smileSVG} />
             <input className={classes.commentInput} type="text" placeholder={PLACE_HOLDER} />
