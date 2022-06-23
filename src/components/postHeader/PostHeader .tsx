@@ -2,8 +2,8 @@ import Icon from '../icon/Icon';
 import Username from '../username/Username';
 import ProfilePicture from '../profilePicture/ProfilePicture';
 import ellipsis from '../../assets/ellipsis.svg';
-import type { User } from '../../types';
 import { classes } from './PostHeader.st.css';
+import type { User } from '../../types';
 
 interface IPostHeader {
     owner: User;

@@ -1,8 +1,8 @@
-import ProfilePicture from '../profilePicture/ProfilePicture';
 import Username from '../username/Username';
+import ProfilePicture from '../profilePicture/ProfilePicture';
+import { classes } from './PostDescription.st.css';
 import { classes as generalClasses } from '../../style/general.st.css';
 import type { PostData, User } from '../../types';
-import { classes } from './PostDescription.st.css';
 
 interface IPostDescription {
     owner: User;
@@ -14,7 +14,7 @@ const PostDescription = ({
 }: IPostDescription) => {
     return (
         <div className={classes.root}>
-            <div className={generalClasses.postTitle}>
+            <div className={classes.postTitle}>
                 <ProfilePicture src={profilePicture} />
                 <div className={classes.commentText}>
                     <div>

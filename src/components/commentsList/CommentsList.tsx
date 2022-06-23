@@ -1,6 +1,6 @@
+import Comment from '../comment/Comment';
 import { classes } from './CommentsList.st.css';
 import type { Comment as IComment } from '../../types';
-import Comment from '../comment/Comment';
 
 interface ICommentListProps {
     comments: IComment[];

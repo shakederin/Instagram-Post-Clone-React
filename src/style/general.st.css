@@ -37,9 +37,4 @@
   cursor: pointer;
 }
 
-.postTitle {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding-left: 0.3em;
-}
+

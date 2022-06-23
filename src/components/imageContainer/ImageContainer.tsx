@@ -1,5 +1,5 @@
-import ScrollButton from '../scrollButton/ScrollButton';
 import arrow from '../../assets/scroll-arrow.svg';
+import ScrollButton from '../scrollButton/ScrollButton';
 import { st, classes } from './ImageContainer.st.css';
 
 interface IImageContainerProps {

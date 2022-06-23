@@ -1,9 +1,9 @@
-import { classes as generalClasses } from '../../style/general.st.css';
-import { st, classes } from './LikedByContainer.st.css';
 import {
     SAMPLE1_LIKED_BY_PROFILE_PICTURE,
     SAMPLE2_LIKED_BY_PROFILE_PICTURE,
 } from '../../constants';
+import { st, classes } from './LikedByContainer.st.css';
+import { classes as generalClasses } from '../../style/general.st.css';
 import type { User } from '../../types';
 
 interface ILikedByContainer {

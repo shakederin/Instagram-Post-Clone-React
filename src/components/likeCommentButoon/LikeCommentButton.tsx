@@ -1,6 +1,6 @@
+import Icon from '../icon/Icon';
 import heart from '../../assets/heart.svg';
 import redHeart from '../../assets/red-heart.svg';
-import Icon from '../icon/Icon';
 interface ILikeCommentButton {
     likeComment: () => void;
 }

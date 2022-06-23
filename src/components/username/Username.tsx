@@ -1,5 +1,5 @@
-import { classes as generalClasses } from '../../style/general.st.css';
 import { classes } from './UserName.st.css';
+import { classes as generalClasses } from '../../style/general.st.css';
 
 interface IUsername {
     userName: string;

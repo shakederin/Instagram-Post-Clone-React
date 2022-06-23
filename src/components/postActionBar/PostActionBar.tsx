@@ -1,9 +1,9 @@
 import Icon from '../icon/Icon';
-import { classes as generalClasses } from '../../style/general.st.css';
-import { classes } from './PostActionBar.st.css';
-import saveIcon from '../../assets/save-icon.svg';
 import heart from '../../assets/heart.svg';
 import redHeart from '../../assets/red-heart.svg';
+import saveIcon from '../../assets/save-icon.svg';
+import { classes } from './PostActionBar.st.css';
+import { classes as generalClasses } from '../../style/general.st.css';
 
 interface IPostActionBar {
     likePost: () => void;

@@ -1,7 +1,7 @@
-import type { User, PostData } from '../../types';
-import ImageContainer from '../imageContainer/ImageContainer';
 import PostLayout from '../postLayout/PostLayout';
+import ImageContainer from '../imageContainer/ImageContainer';
 import { classes } from './InstagramPost.st.css';
+import type { User, PostData } from '../../types';
 
 interface IInstagramPost {
     owner: User;

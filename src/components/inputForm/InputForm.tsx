@@ -1,8 +1,8 @@
-import { PLACE_HOLDER } from '../../constants';
 import Icon from '../icon/Icon';
 import smileSVG from '../../assets/smile.svg';
-import { st, classes as generalClasses } from '../../style/general.st.css';
+import { PLACE_HOLDER } from '../../constants';
 import { classes } from './InputForm.st.css';
+import { st, classes as generalClasses } from '../../style/general.st.css';
 
 interface IInputForm {
     onSubmit: (value: string) => void;
