@@ -1,5 +1,4 @@
 .root {
-  all: unset;  /* will be removed after adding functionality */
   display: flex;
   height: 30em;
   display: flex;

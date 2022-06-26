@@ -9,7 +9,13 @@ interface ICommentInfo {
 
 const CommentInfo = ({ creationDate, LikedBy }: ICommentInfo) => {
     const SecondsPassedFromCreation = Math.floor((Date.now() - creationDate) / 1000);
-    const [timeAgo, setTimeAgo] = useState<string>(`${SecondsPassedFromCreation} s`);
+    const timePastFromCreation =
+        SecondsPassedFromCreation > 3599
+            ? `${Math.floor(SecondsPassedFromCreation / 3600)} h`
+            : SecondsPassedFromCreation > 59
+            ? `${Math.floor(SecondsPassedFromCreation / 60)} m`
+            : `${SecondsPassedFromCreation} s`;
+    const [timeAgo, setTimeAgo] = useState<string>(timePastFromCreation);
 
     useEffect(() => {
         const secondesInterval = setInterval(updateTimeAgo, FIVE_SECONDS);
@@ -31,7 +37,8 @@ const CommentInfo = ({ creationDate, LikedBy }: ICommentInfo) => {
     const getTimeAgo = (creationDate: number) => {
         const SecondsPassedFromCreation = Math.floor((Date.now() - creationDate) / 1000);
         const minutsPassedFromCreation = Math.floor(SecondsPassedFromCreation / 60);
-        const HoursPassedFromCreation = Math.floor(SecondsPassedFromCreation / 3600) - 2;
+        const HoursPassedFromCreation = Math.floor(SecondsPassedFromCreation / 3600);
+        console.log(HoursPassedFromCreation);
 
         let timeAgoPrompt;
         if (HoursPassedFromCreation > 0) {
