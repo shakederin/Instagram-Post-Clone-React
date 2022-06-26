@@ -6,10 +6,6 @@
   margin-bottom: 1.5em;
 }
 
-.commentContentContainer {
-    display: flex;
-}
-
 .commentText {
   margin: 0;
   padding: 0em;

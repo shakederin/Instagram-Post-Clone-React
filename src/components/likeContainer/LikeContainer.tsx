@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import PostActionBar from '../postActionBar/PostActionBar';
 import LikedByContainer from '../likedByContainer/LikedByContainer';
+import { MOCK_DATA, SAMPLES_PROFILE_PICTURE } from '../../mockText';
 import { classes } from './LikeContainer.st.css';
 import type { User } from '../../types';
 
 const LikeContainer = () => {
-    const [usersWhoLiked, setUsersWhoLiked] = useState<User[]>([]);
+    const [usersWhoLiked, setUsersWhoLiked] = useState<User[]>([
+        { userName: MOCK_DATA.SAMPLE_NAME, profilePicture: SAMPLES_PROFILE_PICTURE[2] },
+    ]);
 
     const likePost = (user: User) => {
         let currentUsersWhoLiked = [...usersWhoLiked];

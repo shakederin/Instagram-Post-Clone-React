@@ -2,9 +2,13 @@ export const FOLLOWING = 'Following';
 
 export const LIKED_BY = 'Liked by';
 
+export const YOU = 'you';
+
 export const AND = 'and';
 
 export const OTHER = 'other';
+
+export const OTHERS = 'others';
 
 export const PLACE_HOLDER = 'Add a comment...';
 

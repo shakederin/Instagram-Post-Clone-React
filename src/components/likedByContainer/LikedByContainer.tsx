@@ -1,5 +1,5 @@
-import { SAMPLES_LIKED_BY_PROFILE_PICTURE, MOCK_DATA } from '../../mockText';
-import { AND, LIKED_BY, OTHER, PROFILE_PICTURE_ALT } from '../../constants';
+import { MOCK_DATA } from '../../mockText';
+import { AND, LIKED_BY, OTHER, OTHERS, PROFILE_PICTURE_ALT } from '../../constants';
 import { st, classes } from './LikedByContainer.st.css';
 import { classes as generalClasses } from '../../style/general.st.css';
 import type { User } from '../../types';
@@ -12,30 +12,44 @@ const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
     <div className={classes.root}>
         <div className={classes.likeByWho}>
             <div className={classes.UserLikeByPic}>
-                <img
-                    className={st(
-                        classes.likeProfilePicture,
-                        classes.otherUserLikeByPic,
-                        generalClasses.profilePicture
-                    )}
-                    src={SAMPLES_LIKED_BY_PROFILE_PICTURE[1]}
-                    alt={PROFILE_PICTURE_ALT}
-                ></img>
+                {allUsersWhoLiked.map((user, index) => {
+                    return index > 2 || index === 0 ? (
+                        <></>
+                    ) : (
+                        <img
+                            className={st(
+                                classes.likeProfilePicture,
+                                classes.otherUserLikeByPic,
+                                generalClasses.profilePicture
+                            )}
+                            src={user.profilePicture}
+                            alt={PROFILE_PICTURE_ALT}
+                        ></img>
+                    );
+                })}
                 <img
                     className={st(classes.likeProfilePicture, generalClasses.profilePicture)}
-                    src={SAMPLES_LIKED_BY_PROFILE_PICTURE[2]}
+                    src={allUsersWhoLiked[0].profilePicture}
                     alt={PROFILE_PICTURE_ALT}
                 ></img>
             </div>
             <div className={classes.likeContentContainer}>
                 <span>{LIKED_BY}</span>
                 <span className={st(generalClasses.boldText, generalClasses.text)}>
-                    {allUsersWhoLiked.length ? (
+                    {allUsersWhoLiked.length === 2 ? (
                         <>
-                            {allUsersWhoLiked[0].userName}
+                            {allUsersWhoLiked[1].userName}
                             <span className={generalClasses.text}>{AND}</span>
                             <span className={st(generalClasses.boldText, generalClasses.text)}>
-                                {allUsersWhoLiked.length} {OTHER}
+                                {allUsersWhoLiked.length - 1} {OTHER}
+                            </span>
+                        </>
+                    ) : allUsersWhoLiked.length > 2 ? (
+                        <>
+                            {allUsersWhoLiked[1].userName}
+                            <span className={generalClasses.text}>{AND}</span>
+                            <span className={st(generalClasses.boldText, generalClasses.text)}>
+                                {allUsersWhoLiked.length - 1} {OTHERS}
                             </span>
                         </>
                     ) : (
