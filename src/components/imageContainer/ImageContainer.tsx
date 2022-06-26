@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import arrow from '../../assets/scroll-arrow.svg';
 import ScrollButton from '../scrollButton/ScrollButton';
-import { st, classes } from './ImageContainer.st.css';
-import { useState } from 'react';
 import PhotoIndexIndicator from '../photoIndexIndicator/PhotoIndexIndicator';
+import { st, classes } from './ImageContainer.st.css';
 
 interface IImageContainerProps {
     imgUrls: string[];
