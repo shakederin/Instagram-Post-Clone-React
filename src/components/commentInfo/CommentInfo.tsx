@@ -38,7 +38,6 @@ const CommentInfo = ({ creationDate, LikedBy }: ICommentInfo) => {
         const SecondsPassedFromCreation = Math.floor((Date.now() - creationDate) / 1000);
         const minutsPassedFromCreation = Math.floor(SecondsPassedFromCreation / 60);
         const HoursPassedFromCreation = Math.floor(SecondsPassedFromCreation / 3600);
-        console.log(HoursPassedFromCreation);
 
         let timeAgoPrompt;
         if (HoursPassedFromCreation > 0) {

@@ -13,15 +13,6 @@ const postData = {
 
 export const App = () => (
     <main className={classes.root}>
-        <InstagramPost
-            owner={owner}
-            imgUrls={[
-                POST_IMAGE_SAMPLES[0],
-                POST_IMAGE_SAMPLES[1],
-                POST_IMAGE_SAMPLES[2],
-                POST_IMAGE_SAMPLES[3],
-            ]}
-            postData={postData}
-        />
+        <InstagramPost owner={owner} imgUrls={POST_IMAGE_SAMPLES} postData={postData} />
     </main>
 );
