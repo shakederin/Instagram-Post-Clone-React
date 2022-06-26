@@ -33,7 +33,7 @@ const InputForm = ({ likeComment, onSubmit }: IInputForm) => {
         formElement.current?.reset();
     };
     return (
-        <form ref={formElement} onSubmit={submitForm} className={classes.inputForm}>
+        <form ref={formElement} onSubmit={submitForm} className={classes.root}>
             <div className={classes.inputArea}>
                 <Icon className={st(generalClasses.svgImg, classes.smileSVG)} img={smileSVG} />
                 <input

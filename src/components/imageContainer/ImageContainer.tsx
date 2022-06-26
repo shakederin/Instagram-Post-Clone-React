@@ -1,5 +1,5 @@
-import ScrollButton from '../scrollButton/ScrollButton';
 import arrow from '../../assets/scroll-arrow.svg';
+import ScrollButton from '../scrollButton/ScrollButton';
 import { st, classes } from './ImageContainer.st.css';
 import { useState } from 'react';
 import PhotoIndexIndicator from '../photoIndexIndicator/PhotoIndexIndicator';
@@ -16,7 +16,7 @@ const ImageContainer = ({ imgUrls }: IImageContainerProps) => {
         setCurrentImgUrlIndex(nextIndex - imgUrlsLength * Math.floor(nextIndex / imgUrlsLength));
     };
     return (
-        <div>
+        <div className={classes.root}>
             <div
                 className={classes.mainImg}
                 style={{ backgroundImage: `url(${imgUrls[currentImgUrlIndex]})` }}

@@ -1,3 +1,15 @@
+:global(body) {
+  margin: 0;
+}
+
+
+.root {
+  height: 100vh;
+  background-color: rgb(230, 230, 230);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
 .text {
   font-weight: 400;
   margin-left: 0.3em;
@@ -24,17 +36,4 @@
   width: 1.5em;
   margin: 0 0.5em;
   cursor: pointer;
-}
-
-.postTitle {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding-left: 0.3em;
-}
-
-.root {
-  margin: 0;
-  background-color: rgb(230, 230, 230);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

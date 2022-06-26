@@ -1,12 +1,12 @@
-import { FOLLOWING } from '../../constants';
-import { classes as generalClasses } from '../../style/general.st.css';
 import { classes } from './UserName.st.css';
+import { classes as generalClasses } from '../../style/general.st.css';
+import { FOLLOWING } from '../../constants';
 
-interface IUsername {
+interface IUserName {
     userName: string;
     header: boolean;
 }
-const Username = ({ userName, header }: IUsername) => (
+const UserName = ({ userName, header }: IUserName) => (
     <>
         {header ? (
             <span className={classes.commentsHeader}>
@@ -20,4 +20,4 @@ const Username = ({ userName, header }: IUsername) => (
     </>
 );
 
-export default Username;
+export default UserName;

@@ -8,7 +8,7 @@ interface IPostReactionContainer {
     onCommentSubmit: (comment: Comment) => void;
 }
 const PostReactionContainer = ({ likeComment, onCommentSubmit }: IPostReactionContainer) => (
-    <div className={classes.replyArea}>
+    <div className={classes.root}>
         <LikeContainer />
         <InputForm onSubmit={onCommentSubmit} likeComment={likeComment} />
     </div>

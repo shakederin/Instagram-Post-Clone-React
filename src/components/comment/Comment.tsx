@@ -1,9 +1,8 @@
-import Username from '../username/Username';
+import UserName from '../username/Username';
 import CommentInfo from '../commentInfo/CommentInfo';
 import ProfilePicture from '../profilePicture/ProfilePicture';
 import CommentContent from '../commentContent/CommentContent';
-import LikeCommentButton from '../likeCommentButoon/LikeCommentButton';
-import { classes as generalClasses } from '../../style/general.st.css';
+import LikeCommentButton from '../likeCommentButton/LikeCommentButton';
 import { classes } from './Comment.st.css';
 import type { Comment as CommentType } from '../../types';
 
@@ -15,28 +14,24 @@ const Comment = ({
     creationDate,
     LikedBy,
     likeComment,
-}: IComment) => {
-    return (
-        <li className={classes.comment}>
-            <div className={generalClasses.postTitle}>
-                <ProfilePicture src={profilePicture} />
-                <div className={classes.commentText}>
-                    <div>
-                        <Username userName={userName} header={false} />
-                        <CommentContent content={content} />
-                    </div>
-                    <div className={classes.commentContentContainer}>
-                        <CommentInfo creationDate={creationDate} LikedBy={LikedBy} />
-                    </div>
+}: IComment) => (
+    <li className={classes.root}>
+        <div className={classes.comment}>
+            <ProfilePicture src={profilePicture} />
+            <div className={classes.commentText}>
+                <div>
+                    <UserName userName={userName} header={false} />
+                    <CommentContent content={content} />
                 </div>
+                <CommentInfo creationDate={creationDate} LikedBy={LikedBy} />
             </div>
-            <LikeCommentButton
-                likeComment={likeComment}
-                creationDate={creationDate}
-                LikedBy={LikedBy}
-                userName={userName}
-            />
-        </li>
-    );
-};
+        </div>
+        <LikeCommentButton
+            likeComment={likeComment}
+            creationDate={creationDate}
+            LikedBy={LikedBy}
+            userName={userName}
+        />
+    </li>
+);
 export default Comment;

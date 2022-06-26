@@ -1,4 +1,4 @@
-import { MOCK_DATA, SAMPLES_LIKED_BY_PROFILE_PICTURE } from '../../mockText';
+import { SAMPLES_LIKED_BY_PROFILE_PICTURE, MOCK_DATA } from '../../mockText';
 import { AND, LIKED_BY, OTHER, PROFILE_PICTURE_ALT } from '../../constants';
 import { st, classes } from './LikedByContainer.st.css';
 import { classes as generalClasses } from '../../style/general.st.css';
@@ -9,7 +9,7 @@ interface ILikedByContainer {
 }
 
 const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
-    <div className={classes.allLikes}>
+    <div className={classes.root}>
         <div className={classes.likeByWho}>
             <div className={classes.UserLikeByPic}>
                 <img

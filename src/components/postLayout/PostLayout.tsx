@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import PostHeader from '../postHeader/PostHeader ';
 import CommentsList from '../commentsList/CommentsList';
-import PostReactionContainer from '../postReactionContainer/PostReactionContainer';
 import PostDescription from '../postDescription/PostDescription';
-import type { PostData, User, Comment } from '../../types';
+import PostReactionContainer from '../postReactionContainer/PostReactionContainer';
 import { classes } from './PostLayout.st.css';
+import type { PostData, User, Comment } from '../../types';
 
 interface IPostLayoutProps {
     owner: User;
@@ -31,7 +31,7 @@ const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
     };
 
     return (
-        <div className={classes.postLayout}>
+        <div className={classes.root}>
             <PostHeader owner={owner} />
             <PostDescription owner={owner} postData={postData} />
             <CommentsList comments={comments} likeComment={likeComment} />

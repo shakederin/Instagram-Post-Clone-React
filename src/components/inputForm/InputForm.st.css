@@ -1,19 +1,23 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  height: 30%;
+}
+
 .postComment {
-  all: unset;
+  border-width: 0;
+  background-color: transparent;
+  font-weight: 400;
   margin-right: 1em;
-  font-weight: 600;
   font-size: 1.17em;
   padding: 0;
   color: rgb(165, 212, 235);
   cursor: pointer;
 }
 
-.inputForm {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  height: 30%;
-  display: flex;
+.postComment:hover {
+  color: #3fa7db;
 }
 
 .inputArea {
@@ -24,10 +28,14 @@
 }
 
 .commentInput {
-  all: unset;
+  border: none;
   width: 90%;
   font-size: 1.17em;
   margin-left: 00.5em;
+}
+
+.commentInput:focus{
+    outline: none;
 }
 
 .smileSVG {

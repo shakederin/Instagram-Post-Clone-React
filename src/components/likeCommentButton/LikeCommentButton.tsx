@@ -1,6 +1,6 @@
+import Icon from '../icon/Icon';
 import heart from '../../assets/heart.svg';
 import redHeart from '../../assets/red-heart.svg';
-import Icon from '../icon/Icon';
 import { classes } from './LikeCommentButton.st.css';
 
 interface ILikeCommentButton {
@@ -17,6 +17,7 @@ const LikeCommentButton = ({
 }: ILikeCommentButton) => {
     return (
         <div
+            className={classes.root}
             onClick={() => {
                 likeComment(creationDate, userName);
             }}

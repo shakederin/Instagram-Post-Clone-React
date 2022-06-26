@@ -1,7 +1,10 @@
-.mainContainer {
+.root {
   margin: auto;
-  margin-top: 5em;
   background-color: white;
   display: flex;
-  width: 85em;
+  width: 85rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

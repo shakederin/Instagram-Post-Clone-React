@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import type { User } from '../../types';
-import LikedByContainer from '../likedByContainer/LikedByContainer';
 import PostActionBar from '../postActionBar/PostActionBar';
+import LikedByContainer from '../likedByContainer/LikedByContainer';
 import { classes } from './LikeContainer.st.css';
+import type { User } from '../../types';
 
 const LikeContainer = () => {
     const [usersWhoLiked, setUsersWhoLiked] = useState<User[]>([]);
@@ -23,7 +23,7 @@ const LikeContainer = () => {
         }
     };
     return (
-        <div className={classes.likeContainer}>
+        <div className={classes.root}>
             <PostActionBar likePost={likePost} />
             <LikedByContainer allUsersWhoLiked={usersWhoLiked} />
         </div>
