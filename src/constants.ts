@@ -1,8 +1,15 @@
-export const SAMPLE_DATE = new Date();
-export const SAMPLE_USER_NAME = 'tonytoscani';
-export const SAMPLE_POST_DESCRIPTION = 'me, at the sunrise';
-export const SAMPLE_PROFILE_PICTURE = '';
-export const SAMPLE1_LIKED_BY_PROFILE_PICTURE = '';
-export const SAMPLE2_LIKED_BY_PROFILE_PICTURE = '';
-export const SAMPLE_POST_IMAGE = '';
+export const FOLLOWING = 'Following';
+
+export const LIKED_BY = 'Liked by';
+
+export const AND = 'and';
+
+export const OTHER = 'other';
+
 export const PLACE_HOLDER = 'Add a comment...';
+
+export const POST = 'Post';
+
+export const PROFILE_PICTURE_ALT = 'Profile picture';
+
+export const SAVE_ICON_ATL = 'Save icon';

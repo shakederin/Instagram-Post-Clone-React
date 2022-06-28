@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0.5em;
+}
+
+.saveSVG {
+  width: 1.3em;
+  margin-right: 1.2em;
+}

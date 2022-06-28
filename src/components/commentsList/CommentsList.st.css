@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  height: 30em;
+  flex-direction: column;
+  width: 100%;
+  padding: 0em;
+  list-style-type: none;
+  overflow: scroll;
+}
+
+.root::-webkit-scrollbar {
+  display: none;
+}

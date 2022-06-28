@@ -1,5 +1,8 @@
+import UserName from '../username/Username';
 import ProfilePicture from '../profilePicture/ProfilePicture';
-import Username from '../username/Username';
+import { MOCK_DATA } from '../../mockText';
+import { classes } from './PostDescription.st.css';
+import { classes as generalClasses } from '../../style/general.st.css';
 import type { PostData, User } from '../../types';
 
 interface IPostDescription {
@@ -11,15 +14,17 @@ const PostDescription = ({
     postData: { creationDate, description },
 }: IPostDescription) => {
     return (
-        <div>
-            <div>
+        <div className={classes.root}>
+            <div className={classes.postTitle}>
                 <ProfilePicture src={profilePicture} />
-                <div>
+                <div className={classes.commentText}>
                     <div>
-                        <Username userName={userName} header={false} />
-                        <span>{description}</span>
+                        <UserName userName={userName} header={false} />
+                        <span className={generalClasses.text}>{description}</span>
                     </div>
-                    <div>10 h</div>
+                    <div className={classes.commentInfo}>
+                        {MOCK_DATA.SAMPLE_TIME_PASSED_FROM_CREATION_DATE}
+                    </div>
                 </div>
             </div>
         </div>

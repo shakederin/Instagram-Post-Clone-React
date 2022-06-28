@@ -1,0 +1,10 @@
+.root {
+  margin: auto;
+  background-color: white;
+  display: flex;
+  width: 85rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

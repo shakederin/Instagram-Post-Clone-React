@@ -1,0 +1,21 @@
+.root {}
+
+.mainImg {
+  height: 100%;
+  width: 50em;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow {
+  -st-states: direction(enum(left, right));
+  margin: 0.5em;
+  height: 1.7em;
+  cursor: pointer;
+}
+
+.arrow:direction(right) {
+  transform: rotate(180deg);
+}
