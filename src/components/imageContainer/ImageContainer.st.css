@@ -1,4 +1,4 @@
-.root{}
+.root {}
 
 .mainImg {
   height: 100%;
@@ -9,12 +9,13 @@
   justify-content: space-between;
 }
 
-.rightArrow{
-  transform: rotate(180deg);
-}
-
-.arrow{
+.arrow {
+  -st-states: direction(enum(left, right));
   margin: 0.5em;
   height: 1.7em;
   cursor: pointer;
+}
+
+.arrow:direction(right) {
+  transform: rotate(180deg);
 }
