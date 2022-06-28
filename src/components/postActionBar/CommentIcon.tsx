@@ -1,6 +1,6 @@
 import { classes as generalClasses } from '../../style/general.st.css';
 
-const CommentIcon = () => (
+export const CommentIcon = () => (
     <svg
         className={generalClasses.svgImg}
         aria-label="Comment"
@@ -20,5 +20,3 @@ const CommentIcon = () => (
         ></path>
     </svg>
 );
-
-export default CommentIcon;

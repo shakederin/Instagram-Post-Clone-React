@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import PostActionBar from '../postActionBar/PostActionBar';
-import LikedByContainer from '../likedByContainer/LikedByContainer';
+import { PostActionBar } from '../postActionBar/PostActionBar';
+import { LikedByContainer } from '../likedByContainer/LikedByContainer';
 import { classes } from './LikeContainer.st.css';
 import type { User } from '../../types';
 
-const LikeContainer = () => {
+export const LikeContainer = () => {
     const [usersWhoLiked, setUsersWhoLiked] = useState<User[]>([]);
     const likePost = (user: User) => {};
     return (
@@ -14,5 +14,3 @@ const LikeContainer = () => {
         </div>
     );
 };
-
-export default LikeContainer;

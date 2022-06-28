@@ -1,17 +1,17 @@
 import { useState } from 'react';
-import PostHeader from '../postHeader/PostHeader ';
-import CommentsList from '../commentsList/CommentsList';
-import PostDescription from '../postDescription/PostDescription';
-import PostReactionContainer from '../postReactionContainer/PostReactionContainer';
+import { PostHeader } from '../postHeader/PostHeader ';
+import { CommentsList } from '../commentsList/CommentsList';
+import { PostDescription } from '../postDescription/PostDescription';
+import { PostReactionContainer } from '../postReactionContainer/PostReactionContainer';
 import { classes } from './PostLayout.st.css';
 import type { PostData, User, Comment } from '../../types';
 
-interface IPostLayoutProps {
+export interface IPostLayoutProps {
     owner: User;
     postData: PostData;
 }
 
-const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
+export const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
     const [comments, setComments] = useState<Comment[]>([]);
     const addComment = (value: string) => {};
     const likeComment = () => {};
@@ -25,5 +25,3 @@ const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
         </div>
     );
 };
-
-export default PostLayout;

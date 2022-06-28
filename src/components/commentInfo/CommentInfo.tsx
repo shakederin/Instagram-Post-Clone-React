@@ -1,11 +1,11 @@
 import { classes } from './CommentInfo.st.css';
 
-interface ICommentInfo {
+export interface ICommentInfo {
     creationDate: Date;
     likesCount: number;
 }
 
-const CommentInfo = ({ creationDate, likesCount }: ICommentInfo) => {
+export const CommentInfo = ({ creationDate, likesCount }: ICommentInfo) => {
     return (
         <div className={classes.root}>
             <div className={classes.infoSubtitle}>{creationDate.toDateString()}</div>
@@ -18,5 +18,3 @@ const CommentInfo = ({ creationDate, likesCount }: ICommentInfo) => {
         </div>
     );
 };
-
-export default CommentInfo;

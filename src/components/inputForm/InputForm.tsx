@@ -1,14 +1,14 @@
-import Icon from '../icon/Icon';
+import { Icon } from '../icon/Icon';
 import smileSVG from '../../assets/smile.svg';
 import { PLACE_HOLDER, POST } from '../../constants';
 import { classes } from './InputForm.st.css';
 import { st, classes as generalClasses } from '../../style/general.st.css';
 
-interface IInputForm {
+export interface IInputForm {
     onSubmit: (value: string) => void;
 }
 
-const InputForm = ({}: IInputForm) => (
+export const InputForm = ({}: IInputForm) => (
     <form className={classes.root}>
         <div className={classes.inputArea}>
             <Icon className={st(generalClasses.svgImg, classes.smileSVG)} img={smileSVG} />
@@ -19,4 +19,3 @@ const InputForm = ({}: IInputForm) => (
         </button>
     </form>
 );
-export default InputForm;

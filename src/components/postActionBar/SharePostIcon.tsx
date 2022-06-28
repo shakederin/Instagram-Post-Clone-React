@@ -1,6 +1,6 @@
 import { classes as generalClasses } from '../../style/general.st.css';
 
-const SharePostIcon = () => (
+export const SharePostIcon = () => (
     <svg
         className={generalClasses.svgImg}
         aria-label="Share Post"
@@ -30,5 +30,3 @@ const SharePostIcon = () => (
         />
     </svg>
 );
-
-export default SharePostIcon;

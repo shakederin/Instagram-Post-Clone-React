@@ -4,11 +4,11 @@ import { st, classes } from './LikedByContainer.st.css';
 import { classes as generalClasses } from '../../style/general.st.css';
 import type { User } from '../../types';
 
-interface ILikedByContainer {
+export interface ILikedByContainer {
     allUsersWhoLiked: User[];
 }
 
-const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
+export const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
     <div className={classes.root}>
         <div className={classes.likeByWho}>
             <div className={classes.UserLikeByPic}>
@@ -47,5 +47,3 @@ const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
         <div className={classes.hoursAgo}>{MOCK_DATA.SAMPLE_HOURS_AGO}</div>
     </div>
 );
-
-export default LikedByContainer;

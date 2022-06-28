@@ -1,15 +1,15 @@
-import UserName from '../username/Username';
-import ProfilePicture from '../profilePicture/ProfilePicture';
+import { UserName } from '../username/Username';
+import { ProfilePicture } from '../profilePicture/ProfilePicture';
 import { MOCK_DATA } from '../../mockText';
 import { classes } from './PostDescription.st.css';
 import { classes as generalClasses } from '../../style/general.st.css';
 import type { PostData, User } from '../../types';
 
-interface IPostDescription {
+export interface IPostDescription {
     owner: User;
     postData: PostData;
 }
-const PostDescription = ({
+export const PostDescription = ({
     owner: { userName, profilePicture },
     postData: { creationDate, description },
 }: IPostDescription) => {
@@ -30,5 +30,3 @@ const PostDescription = ({
         </div>
     );
 };
-
-export default PostDescription;
