@@ -15,7 +15,6 @@ interface IInputForm {
 const InputForm = ({ likeComment, onSubmit }: IInputForm) => {
     const inputElement = useRef<HTMLInputElement>(null);
     const formElement = useRef<HTMLFormElement>(null);
-
     const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
@@ -26,7 +25,7 @@ const InputForm = ({ likeComment, onSubmit }: IInputForm) => {
                 content: inputElement.current.value,
                 creationDate: Date.now(),
                 LikedBy: [],
-                likeComment: likeComment,
+                likeComment,
             };
             onSubmit(newComment);
         }

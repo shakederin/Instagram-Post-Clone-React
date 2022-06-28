@@ -34,8 +34,8 @@
   margin-left: 00.5em;
 }
 
-.commentInput:focus{
-    outline: none;
+.commentInput:focus {
+  outline: none;
 }
 
 .smileSVG {

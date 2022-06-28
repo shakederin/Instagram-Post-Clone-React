@@ -26,7 +26,10 @@ const ImageContainer = ({ imgUrls }: IImageContainerProps) => {
                         scrollImg(-1);
                     }}
                 >
-                    <ScrollButton className={classes.arrow} svgPath={arrow} />
+                    <ScrollButton
+                        className={st(classes.arrow, { direction: 'left' })}
+                        svgPath={arrow}
+                    />
                 </div>
 
                 <PhotoIndexIndicator imgUrls={imgUrls} currentImgUrlIndex={currentImgUrlIndex} />
@@ -37,7 +40,7 @@ const ImageContainer = ({ imgUrls }: IImageContainerProps) => {
                     }}
                 >
                     <ScrollButton
-                        className={st(classes.rightArrow, classes.arrow)}
+                        className={st(classes.arrow, { direction: 'right' })}
                         svgPath={arrow}
                     />
                 </div>
