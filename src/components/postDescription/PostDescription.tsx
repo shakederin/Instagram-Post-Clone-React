@@ -11,7 +11,7 @@ interface IPostDescription {
 }
 const PostDescription = ({
     owner: { userName, profilePicture },
-    postData: { creationDate, description },
+    postData: { description },
 }: IPostDescription) => {
     return (
         <div className={classes.root}>

@@ -11,7 +11,7 @@
     "serve": "serve ./dist",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "npm run typecheck && npm run lint"
+    "test": "mocha \"src/test/tests/*.test.ts\""
   },
   "keywords": [],
   "author": "",
@@ -27,6 +27,7 @@
     "@stylable/core": "^4.13.2",
     "@stylable/runtime": "^4.13.2",
     "@stylable/webpack-plugin": "^4.13.2",
+    "@types/mocha": "^9.1.1",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
@@ -37,6 +38,8 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-stylable": "^4.13.2",
     "html-webpack-plugin": "^5.5.0",
+    "mocha": "^10.0.0",
+    "playwright": "^1.23.0",
     "rimraf": "^3.0.2",
     "serve": "^13.0.2",
     "ts-loader": "^9.3.0",

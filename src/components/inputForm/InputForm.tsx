@@ -39,6 +39,7 @@ const InputForm = ({ likeComment, onSubmit }: IInputForm) => {
                     ref={inputElement}
                     className={classes.commentInput}
                     type="text"
+                    maxLength={40}
                     placeholder={PLACE_HOLDER}
                 />
             </div>
