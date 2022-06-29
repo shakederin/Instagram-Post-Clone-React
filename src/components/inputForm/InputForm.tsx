@@ -5,7 +5,7 @@ import { getRandomUser } from '../../utils/getRandomUser';
 import { PLACE_HOLDER, POST } from '../../constants';
 import { st, classes as generalClasses } from '../../style/general.st.css';
 import { classes } from './InputForm.st.css';
-import type { Comment, LikeComment, OnSubmit } from '../../types';
+import type { LikeComment, OnSubmit } from '../../types';
 
 interface IInputForm {
     likeComment: LikeComment;

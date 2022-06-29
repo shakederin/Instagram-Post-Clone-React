@@ -4,7 +4,9 @@ interface IProfilePicture {
     src: string;
 }
 const ProfilePicture = ({ src }: IProfilePicture) => (
-    <img className={generalClasses.profilePicture} src={src} />
+    <div className={generalClasses.profilePictureContainer}>
+        <img className={generalClasses.profilePicture} src={src} />
+    </div>
 );
 
 export default ProfilePicture;
