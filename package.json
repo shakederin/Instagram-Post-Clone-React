@@ -11,7 +11,7 @@
     "serve": "serve ./dist",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "mocha \"src/test/tests/*.test.ts\""
+    "test": "mocha \"dist/test/tests/*.test.js\""
   },
   "keywords": [],
   "author": "",
@@ -46,5 +46,6 @@
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0"
-  }
+  },
+  "type": "module"
 }
