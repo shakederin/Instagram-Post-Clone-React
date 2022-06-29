@@ -9,7 +9,7 @@ import { SAVE_ICON_ATL, YOU } from '../../constants';
 import { classes } from './PostActionBar.st.css';
 import { classes as generalClasses } from '../../style/general.st.css';
 import type { User } from '../../types';
-import { SAMPLES_PROFILE_PICTURE } from '../../mockText';
+import { SAMPLE_PROFILE_PICTURES } from '../../mockData';
 
 interface IPostActionBar {
     likePost: (user: User) => void;
@@ -22,15 +22,11 @@ const PostActionBar = ({ likePost }: IPostActionBar) => {
             <div>
                 <span
                     onClick={() => {
-                        likePost({ userName: YOU, profilePicture: SAMPLES_PROFILE_PICTURE[1] });
+                        likePost({ userName: YOU, profilePicture: SAMPLE_PROFILE_PICTURES[1] });
                         setIsLiked(!isLiked);
                     }}
                 >
-                    {isLiked ? (
-                        <Icon img={redHeart} className={generalClasses.svgImg} />
-                    ) : (
-                        <Icon img={heart} className={generalClasses.svgImg} />
-                    )}
+                    <Icon img={isLiked ? redHeart : heart} className={generalClasses.svgImg} />
                 </span>
                 <CommentIcon />
                 <SharePostIcon />

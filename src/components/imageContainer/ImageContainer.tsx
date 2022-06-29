@@ -10,8 +10,8 @@ interface IImageContainerProps {
 const ImageContainer = ({ imgUrls }: IImageContainerProps) => {
     const [currentImgUrlIndex, setCurrentImgUrlIndex] = useState(0);
 
-    const scrollImg = (action: number) => {
-        const nextIndex = currentImgUrlIndex + action;
+    const scrollImg = (next: boolean) => {
+        const nextIndex = currentImgUrlIndex + (next ? 1 : -1);
         const imgUrlsLength = imgUrls.length;
         setCurrentImgUrlIndex(nextIndex - imgUrlsLength * Math.floor(nextIndex / imgUrlsLength));
     };
@@ -23,7 +23,7 @@ const ImageContainer = ({ imgUrls }: IImageContainerProps) => {
             >
                 <div
                     onClick={() => {
-                        scrollImg(-1);
+                        scrollImg(false);
                     }}
                 >
                     <ScrollButton
@@ -36,7 +36,7 @@ const ImageContainer = ({ imgUrls }: IImageContainerProps) => {
 
                 <div
                     onClick={() => {
-                        scrollImg(1);
+                        scrollImg(true);
                     }}
                 >
                     <ScrollButton

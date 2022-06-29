@@ -17,10 +17,10 @@ const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
     const addComment = (comment: Comment) => {
         setComments((precomments) => [...precomments, comment]);
     };
-    const likeComment = (date: number, userName: string) => {
+    const likeComment = (id: string, userName: string) => {
         const newState = [...comments];
         for (const comment of newState) {
-            if (comment.creationDate === date) {
+            if (comment.id === id) {
                 const indexOfUserName = comment.LikedBy.indexOf(userName);
                 indexOfUserName === -1
                     ? comment.LikedBy.push(userName)

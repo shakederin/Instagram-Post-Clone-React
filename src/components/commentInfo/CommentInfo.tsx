@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FIVE_SECONDS, LIKE, ONE_MINUTE, REPLY } from '../../constants';
 import { classes } from './CommentInfo.st.css';
+import { getTimeAgo } from './helpers';
 
 interface ICommentInfo {
     creationDate: number;
@@ -34,21 +35,6 @@ const CommentInfo = ({ creationDate, LikedBy }: ICommentInfo) => {
         setTimeAgo(getTimeAgo(creationDate));
     };
 
-    const getTimeAgo = (creationDate: number) => {
-        const SecondsPassedFromCreation = Math.floor((Date.now() - creationDate) / 1000);
-        const minutsPassedFromCreation = Math.floor(SecondsPassedFromCreation / 60);
-        const HoursPassedFromCreation = Math.floor(SecondsPassedFromCreation / 3600);
-
-        let timeAgoPrompt;
-        if (HoursPassedFromCreation > 0) {
-            timeAgoPrompt = `${HoursPassedFromCreation} h`;
-        } else if (minutsPassedFromCreation > 0) {
-            timeAgoPrompt = `${minutsPassedFromCreation} m`;
-        } else {
-            timeAgoPrompt = `${SecondsPassedFromCreation} s`;
-        }
-        return timeAgoPrompt;
-    };
     return (
         <div className={classes.root}>
             <div className={classes.commentInfo}>

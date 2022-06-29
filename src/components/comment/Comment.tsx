@@ -14,6 +14,7 @@ const Comment = ({
     creationDate,
     LikedBy,
     likeComment,
+    id,
 }: IComment) => (
     <li className={classes.root}>
         <div className={classes.comment}>
@@ -28,9 +29,9 @@ const Comment = ({
         </div>
         <LikeCommentButton
             likeComment={likeComment}
-            creationDate={creationDate}
-            LikedBy={LikedBy}
+            id={id}
             userName={userName}
+            LikedBy={LikedBy}
         />
     </li>
 );
