@@ -1,11 +1,11 @@
-import type { Comment } from '../../types';
+import type { LikeComment, OnSubmit } from '../../types';
 import InputForm from '../inputForm/InputForm';
 import LikeContainer from '../likeContainer/LikeContainer';
 import { classes } from './PostReactionContainer.st.css';
 
 interface IPostReactionContainer {
-    likeComment: (date: number, userName: string) => void;
-    onCommentSubmit: (comment: Comment) => void;
+    likeComment: LikeComment;
+    onCommentSubmit: OnSubmit;
 }
 const PostReactionContainer = ({ likeComment, onCommentSubmit }: IPostReactionContainer) => (
     <div className={classes.root}>

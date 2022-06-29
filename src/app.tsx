@@ -1,10 +1,10 @@
 import InstagramPost from './components/instagramPost/InstagramPost';
-import { MOCK_DATA, POST_IMAGE_SAMPLES, SAMPLES_PROFILE_PICTURE } from './mockText';
+import { MOCK_DATA, POST_IMAGES, SAMPLE_PROFILE_PICTURES } from './mockData';
 import { classes } from './style/general.st.css';
 
 const owner = {
     userName: MOCK_DATA.SAMPLE_USER_NAME,
-    profilePicture: SAMPLES_PROFILE_PICTURE[0],
+    profilePicture: SAMPLE_PROFILE_PICTURES[0],
 };
 const postData = {
     description: MOCK_DATA.SAMPLE_POST_DESCRIPTION,
@@ -13,6 +13,6 @@ const postData = {
 
 export const App = () => (
     <main className={classes.root}>
-        <InstagramPost owner={owner} imgUrls={POST_IMAGE_SAMPLES} postData={postData} />
+        <InstagramPost owner={owner} imgUrls={POST_IMAGES} postData={postData} />
     </main>
 );

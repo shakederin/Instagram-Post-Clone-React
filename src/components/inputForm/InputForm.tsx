@@ -5,11 +5,11 @@ import { getRandomUser } from '../../utils/getRandomUser';
 import { PLACE_HOLDER, POST } from '../../constants';
 import { st, classes as generalClasses } from '../../style/general.st.css';
 import { classes } from './InputForm.st.css';
-import type { Comment } from '../../types';
+import type { Comment, LikeComment, OnSubmit } from '../../types';
 
 interface IInputForm {
-    likeComment: (date: number, userName: string) => void;
-    onSubmit: (comment: Comment) => void;
+    likeComment: LikeComment;
+    onSubmit: OnSubmit;
 }
 
 const InputForm = ({ likeComment, onSubmit }: IInputForm) => {
@@ -20,12 +20,13 @@ const InputForm = ({ likeComment, onSubmit }: IInputForm) => {
 
         if (inputElement.current instanceof HTMLInputElement && inputElement.current.value.trim()) {
             const randomUser = getRandomUser();
-            const newComment: Comment = {
+            const newComment = {
                 user: randomUser,
                 content: inputElement.current.value,
                 creationDate: Date.now(),
                 LikedBy: [],
                 likeComment,
+                id: Math.random().toString(16).slice(2),
             };
             onSubmit(newComment);
         }

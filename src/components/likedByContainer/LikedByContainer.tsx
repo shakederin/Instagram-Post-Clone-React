@@ -1,9 +1,10 @@
-import { MOCK_DATA } from '../../mockText';
+import { MOCK_DATA } from '../../mockData';
 import { AND, LIKED_BY, OTHER, OTHERS, PROFILE_PICTURE_ALT } from '../../constants';
 import { st, classes } from './LikedByContainer.st.css';
 import { classes as generalClasses } from '../../style/general.st.css';
 import type { User } from '../../types';
 
+const { SAMPLE_HOURS_AGO } = MOCK_DATA;
 interface ILikedByContainer {
     allUsersWhoLiked: User[];
 }
@@ -14,7 +15,7 @@ const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
             <div className={classes.UserLikeByPic}>
                 {allUsersWhoLiked.map((user, index) => {
                     return index > 2 || index === 0 ? (
-                        <></>
+                        <div key={Math.random().toString(16).slice(2)}></div>
                     ) : (
                         <img
                             className={st(
@@ -24,6 +25,7 @@ const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
                             )}
                             src={user.profilePicture}
                             alt={PROFILE_PICTURE_ALT}
+                            key={Math.random().toString(16).slice(2)}
                         ></img>
                     );
                 })}
@@ -53,12 +55,12 @@ const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
                             </span>
                         </>
                     ) : (
-                        MOCK_DATA.SAMPLE_NAME
+                        allUsersWhoLiked[0].userName
                     )}
                 </span>
             </div>
         </div>
-        <div className={classes.hoursAgo}>{MOCK_DATA.SAMPLE_HOURS_AGO}</div>
+        <div className={classes.hoursAgo}>{SAMPLE_HOURS_AGO}</div>
     </div>
 );
 
