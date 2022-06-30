@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Icon from '../icon/Icon';
 
 interface IScrollButton {
@@ -8,4 +9,4 @@ const ScrollButton = ({ svgPath, className }: IScrollButton) => (
     <Icon className={className} img={svgPath} />
 );
 
-export default ScrollButton;
+export default memo(ScrollButton);
