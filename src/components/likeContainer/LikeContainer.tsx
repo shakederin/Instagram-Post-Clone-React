@@ -44,3 +44,17 @@ export default LikeContainer;
 //             : [...prev.slice(0, userIndex), ...prev.slice(userIndex + 1)];
 //     });
 // };
+
+// const likePost = (user: User) => {
+//     let currentUsersWhoLiked = [...usersWhoLiked];
+//     const filteredArray = currentUsersWhoLiked.filter(
+//         (user) => user.userName === user.userName
+//     )[0];
+//     const indexOfUser = currentUsersWhoLiked.indexOf(filteredArray);
+//     if (indexOfUser < 0) {
+//         setUsersWhoLiked([...currentUsersWhoLiked, user]);
+//     } else {
+//         currentUsersWhoLiked.splice(indexOfUser, 1);
+//         setUsersWhoLiked(currentUsersWhoLiked);
+//     }
+// };
