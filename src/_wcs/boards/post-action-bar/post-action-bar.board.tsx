@@ -4,8 +4,8 @@ import PostActionBar from './../../../components/postActionBar/PostActionBar';
 
 export default createBoard({
     name: 'PostActionBar',
-    Board: () => <PostActionBar />,
+    Board: () => <PostActionBar likePost={() => {}} />,
     environmentProps: {
-        canvasWidth: 464
-    }
+        canvasWidth: 464,
+    },
 });

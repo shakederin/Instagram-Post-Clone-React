@@ -14,8 +14,8 @@ const CommentInfo = ({ creationDate, LikedBy }: ICommentInfo) => {
         SecondsPassedFromCreation > 3599
             ? `${Math.floor(SecondsPassedFromCreation / 3600)} h`
             : SecondsPassedFromCreation > 59
-            ? `${Math.floor(SecondsPassedFromCreation / 60)} m`
-            : `${SecondsPassedFromCreation} s`;
+                ? `${Math.floor(SecondsPassedFromCreation / 60)} m`
+                : `${SecondsPassedFromCreation} s`;
     const [timeAgo, setTimeAgo] = useState<string>(timePastFromCreation);
 
     useEffect(() => {

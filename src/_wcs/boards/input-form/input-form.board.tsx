@@ -4,8 +4,8 @@ import InputForm from './../../../components/inputForm/InputForm';
 
 export default createBoard({
     name: 'InputForm',
-    Board: () => <InputForm />,
+    Board: () => <InputForm likeComment={() => {}} onSubmit={() => {}} />,
     environmentProps: {
-        canvasWidth: 419
-    }
+        canvasWidth: 419,
+    },
 });

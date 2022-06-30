@@ -4,8 +4,8 @@ import PostReactionContainer from './../../../components/postReactionContainer/P
 
 export default createBoard({
     name: 'PostReactionContainer',
-    Board: () => <PostReactionContainer />,
+    Board: () => <PostReactionContainer likeComment={() => {}} onCommentSubmit={() => {}} />,
     environmentProps: {
-        canvasWidth: 565
-    }
+        canvasWidth: 565,
+    },
 });

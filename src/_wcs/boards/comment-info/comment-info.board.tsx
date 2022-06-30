@@ -4,8 +4,9 @@ import CommentInfo from './../../../components/commentInfo/CommentInfo';
 
 export default createBoard({
     name: 'CommentInfo',
-    Board: () => <CommentInfo creationDate={new Date()} likesCount={1} />,
+    Board: () => <CommentInfo creationDate={Date.now()} LikedBy={[]} />,
     environmentProps: {
-        canvasWidth: 306
-    }
+        canvasWidth: 186,
+        canvasHeight: 64,
+    },
 });

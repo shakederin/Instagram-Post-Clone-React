@@ -26,7 +26,7 @@ const PostActionBar = ({ likePost }: IPostActionBar) => {
                         setIsLiked(!isLiked);
                     }}
                 >
-                    <Icon img={isLiked ? redHeart : heart} className={generalClasses.svgImg} />
+                    <Icon className={generalClasses.svgImg} img={isLiked ? redHeart : heart} />
                 </span>
                 <CommentIcon />
                 <SharePostIcon />
