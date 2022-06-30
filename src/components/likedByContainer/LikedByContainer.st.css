@@ -1,26 +1,32 @@
 .root {
-  margin: 1em 0em 0em 0.5em;
+  margin: 1em 0 0 0.5em;
   display: flex;
   flex-direction: column;
 }
+
 .likeByWho {
   display: flex;
 }
+
 .UserLikeByPic {
   display: flex;
   flex-direction: row-reverse;
 }
+
 .likeProfilePicture {
   width: 1.5em;
   height: 1.5em;
-  border: 0em;
+  border: 0;
 }
+
 .otherUserLikeByPic {
   margin-left: -0.5em;
 }
+
 .likeContentContainer {
   margin-left: 0.3em;
 }
+
 .hoursAgo {
   font-size: 0.8em;
   margin-left: 0.5em;

@@ -1,0 +1,20 @@
+.root {
+    display: flex;
+    font-size: 30px;
+    height: 100%;
+}
+
+.dot {
+    align-items: flex-end;
+    display: flex;
+    height: 100%;
+    color: rgb(201, 201, 201, 0.5);
+}
+
+.fadeDot {
+    color: rgb(201, 201, 201, 0.2);
+}
+
+.currentDot {
+    color: white;
+}

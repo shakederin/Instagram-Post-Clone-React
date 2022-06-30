@@ -8,10 +8,15 @@ export interface PostData {
     creationDate: Date;
 }
 
-export type Comment = {
+export type LikeComment = (id: string, userName: string) => void;
+
+export type OnSubmit = (comment: Comment) => void;
+
+export interface Comment {
+    id: string;
     user: User;
     content: string;
-    creationDate: Date;
-    LikesCount: number;
-    likeComment: () => void;
-};
+    creationDate: number;
+    LikedBy: string[];
+    likeComment: LikeComment;
+}

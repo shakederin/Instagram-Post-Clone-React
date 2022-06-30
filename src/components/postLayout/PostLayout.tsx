@@ -13,15 +13,29 @@ interface IPostLayoutProps {
 
 const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
     const [comments, setComments] = useState<Comment[]>([]);
-    const addComment = (value: string) => {};
-    const likeComment = () => {};
+
+    const addComment = (comment: Comment) => {
+        setComments((precomments) => [...precomments, comment]);
+    };
+    const likeComment = (id: string, userName: string) => {
+        const newState = [...comments];
+        for (const comment of newState) {
+            if (comment.id === id) {
+                const indexOfUserName = comment.LikedBy.indexOf(userName);
+                indexOfUserName === -1
+                    ? comment.LikedBy.push(userName)
+                    : comment.LikedBy.splice(indexOfUserName, 1);
+            }
+        }
+        setComments(newState);
+    };
 
     return (
         <div className={classes.root}>
             <PostHeader owner={owner} />
             <PostDescription owner={owner} postData={postData} />
             <CommentsList comments={comments} likeComment={likeComment} />
-            <PostReactionContainer onCommentSubmit={addComment} />
+            <PostReactionContainer onCommentSubmit={addComment} likeComment={likeComment} />
         </div>
     );
 };

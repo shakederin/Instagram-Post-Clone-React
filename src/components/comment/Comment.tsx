@@ -12,8 +12,9 @@ const Comment = ({
     user: { userName, profilePicture },
     content,
     creationDate,
-    LikesCount,
+    LikedBy,
     likeComment,
+    id,
 }: IComment) => (
     <li className={classes.root}>
         <div className={classes.comment}>
@@ -23,12 +24,15 @@ const Comment = ({
                     <UserName userName={userName} header={false} />
                     <CommentContent content={content} />
                 </div>
-                <CommentInfo creationDate={creationDate} likesCount={LikesCount} />
+                <CommentInfo creationDate={creationDate} LikedBy={LikedBy} />
             </div>
-
-            <LikeCommentButton likeComment={likeComment} />
         </div>
+        <LikeCommentButton
+            likeComment={likeComment}
+            id={id}
+            userName={userName}
+            LikedBy={LikedBy}
+        />
     </li>
 );
-
 export default Comment;
