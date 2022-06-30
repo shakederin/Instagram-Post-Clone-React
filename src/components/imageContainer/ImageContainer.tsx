@@ -32,7 +32,11 @@ const ImageContainer = ({ imgUrls }: IImageContainerProps) => {
                     />
                 </div>
 
-                <PhotoIndexIndicator imgUrls={imgUrls} currentImgUrlIndex={currentImgUrlIndex} />
+                <PhotoIndexIndicator
+                    imgUrls={imgUrls}
+                    currentImgUrlIndex={currentImgUrlIndex}
+                    visualDotCount={10}
+                />
 
                 <div
                     onClick={() => {
