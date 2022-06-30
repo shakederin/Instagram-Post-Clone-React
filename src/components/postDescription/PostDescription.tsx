@@ -4,6 +4,7 @@ import { MOCK_DATA } from '../../mockData';
 import { classes } from './PostDescription.st.css';
 import { classes as generalClasses } from '../../style/general.st.css';
 import type { PostData, User } from '../../types';
+import { memo } from 'react';
 
 interface IPostDescription {
     owner: User;
@@ -31,4 +32,4 @@ const PostDescription = ({
     );
 };
 
-export default PostDescription;
+export default memo(PostDescription);

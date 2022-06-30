@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { classes as generalClasses } from '../../style/general.st.css';
 
 interface IProfilePicture {
@@ -9,4 +10,4 @@ const ProfilePicture = ({ src }: IProfilePicture) => (
     </div>
 );
 
-export default ProfilePicture;
+export default memo(ProfilePicture);

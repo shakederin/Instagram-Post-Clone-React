@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { LikeComment, OnSubmit } from '../../types';
 import InputForm from '../inputForm/InputForm';
 import LikeContainer from '../likeContainer/LikeContainer';
@@ -14,4 +15,4 @@ const PostReactionContainer = ({ likeComment, onCommentSubmit }: IPostReactionCo
     </div>
 );
 
-export default PostReactionContainer;
+export default memo(PostReactionContainer);

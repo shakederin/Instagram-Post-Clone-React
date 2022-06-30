@@ -9,19 +9,17 @@ interface ICommentListProps {
 
 const CommentsList = ({ comments, likeComment }: ICommentListProps) => (
     <ul className={classes.root}>
-        {comments.map(
-            ({ user: { userName, profilePicture }, creationDate, content, LikedBy, id }) => (
-                <Comment
-                    user={{ userName, profilePicture }}
-                    creationDate={creationDate}
-                    content={content}
-                    LikedBy={LikedBy}
-                    likeComment={likeComment}
-                    key={Math.random().toString(16).slice(2)}
-                    id={id}
-                />
-            )
-        )}
+        {comments.map(({ user, creationDate, content, LikedBy, id }) => (
+            <Comment
+                user={user}
+                creationDate={creationDate}
+                content={content}
+                LikedBy={LikedBy}
+                likeComment={likeComment}
+                key={id}
+                id={id}
+            />
+        ))}
     </ul>
 );
 

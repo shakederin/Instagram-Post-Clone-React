@@ -13,10 +13,8 @@ const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => (
     <div className={classes.root}>
         <div className={classes.likeByWho}>
             <div className={classes.UserLikeByPic}>
-                {allUsersWhoLiked.map((user, index) => {
-                    return index > 2 || index === 0 ? (
-                        <div key={Math.random().toString(16).slice(2)}></div>
-                    ) : (
+                {allUsersWhoLiked.slice(1, 3).map((user) => {
+                    return (
                         <img
                             className={st(
                                 classes.likeProfilePicture,
