@@ -6,7 +6,7 @@ import LikeCommentButton from '../likeCommentButton/LikeCommentButton';
 import { classes } from './Comment.st.css';
 import type { Comment as CommentType } from '../../types';
 
-interface IComment extends CommentType {}
+interface IComment extends CommentType { }
 
 const Comment = ({
     user: { userName, profilePicture },
@@ -25,6 +25,7 @@ const Comment = ({
                 </div>
                 <CommentInfo creationDate={creationDate} likesCount={LikesCount} />
             </div>
+
             <LikeCommentButton likeComment={likeComment} />
         </div>
     </li>

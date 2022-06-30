@@ -8,7 +8,7 @@ interface ILikeCommentButton {
 const LikeCommentButton = ({ likeComment }: ILikeCommentButton) => {
     return (
         <div className={classes.root}>
-            <Icon img={heart} className={classes.likeCommentButton} />;
+            <Icon img={heart} className={classes.likeCommentButton} />
         </div>
     );
 };
