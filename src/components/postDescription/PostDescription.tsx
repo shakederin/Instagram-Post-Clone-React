@@ -17,7 +17,7 @@ const PostDescription = ({
     return (
         <div className={classes.root}>
             <div className={classes.postTitle}>
-                <ProfilePicture src={profilePicture} />
+                <ProfilePicture src={profilePicture} story={true} />
                 <div className={classes.commentText}>
                     <div>
                         <UserName userName={userName} header={false} />

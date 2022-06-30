@@ -5,6 +5,7 @@ import CommentContent from '../commentContent/CommentContent';
 import LikeCommentButton from '../likeCommentButton/LikeCommentButton';
 import { classes } from './Comment.st.css';
 import type { Comment as CommentType } from '../../types';
+import { getBoolean } from '../../utils/getBoolean';
 
 interface IComment extends CommentType {}
 
@@ -18,7 +19,7 @@ const Comment = ({
 }: IComment) => (
     <li className={classes.root}>
         <div className={classes.comment}>
-            <ProfilePicture src={profilePicture} />
+            <ProfilePicture src={profilePicture} story={getBoolean()} />
             <div className={classes.commentText}>
                 <div>
                     <UserName userName={userName} header={false} />
