@@ -20,3 +20,7 @@ export interface Comment {
     LikedBy: string[];
     likeComment: LikeComment;
 }
+
+export interface IinisialState {
+    [key: string]: User;
+}

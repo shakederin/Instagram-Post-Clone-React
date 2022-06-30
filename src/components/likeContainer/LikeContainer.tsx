@@ -2,26 +2,24 @@ import { useState } from 'react';
 import PostActionBar from '../postActionBar/PostActionBar';
 import LikedByContainer from '../likedByContainer/LikedByContainer';
 import { classes } from './LikeContainer.st.css';
-import type { User } from '../../types';
+import type { IinisialState, User } from '../../types';
 import { getRandomUser } from '../../utils/getRandomUser';
 
+// type userMate = Record<string, User>;
+
 const LikeContainer = () => {
-    const [usersWhoLiked, setUsersWhoLiked] = useState<User[]>([getRandomUser()]);
+    const randomUser = getRandomUser();
+    const [usersWhoLiked, setUsersWhoLiked] = useState<IinisialState>({
+        [randomUser.userName]: randomUser,
+    });
 
     const likePost = (user: User) => {
-        let currentUsersWhoLiked = [...usersWhoLiked];
-        let indexOfUser = -1;
-        for (let i = 0; i < usersWhoLiked.length; i++) {
-            if (usersWhoLiked[i].userName === user.userName) {
-                indexOfUser = i;
-            }
-        }
-        if (indexOfUser < 0) {
-            setUsersWhoLiked([...currentUsersWhoLiked, user]);
-        } else {
-            currentUsersWhoLiked.splice(indexOfUser, 1);
-            setUsersWhoLiked(currentUsersWhoLiked);
-        }
+        console.log(usersWhoLiked);
+        const mutateState = { ...usersWhoLiked };
+        mutateState.hasOwnProperty(user.userName)
+            ? delete mutateState[user.userName]
+            : (mutateState[user.userName] = user);
+        setUsersWhoLiked(mutateState);
     };
 
     return (
