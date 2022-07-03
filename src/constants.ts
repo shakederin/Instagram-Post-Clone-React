@@ -22,6 +22,6 @@ export const LIKE = 'like';
 
 export const REPLY = 'Reply';
 
-export const ONE_MINUTE = 1000 * 60;
+export const ONE_MINUTE = 60_000;
 
-export const FIVE_SECONDS = 1000 * 5;
+export const FIVE_SECONDS = 5_000;

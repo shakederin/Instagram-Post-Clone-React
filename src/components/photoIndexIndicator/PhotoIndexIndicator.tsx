@@ -1,20 +1,22 @@
-import { PhotoIndexIndicatorAbove5, renderPhotoIndexIndicator } from './helpers';
+import { PhotoIndexIndicatorPastLimit, renderPhotoIndexIndicator } from './helpers';
 import { classes } from './PhotoIndexIndicator.st.css';
 
 interface IPhotoIndexIndicator {
     currentImgUrlIndex: number;
     imgUrls: string[];
-    visualDotCount: number;
+    maxVisualDotCount: number;
 }
 const PhotoIndexIndicator = ({
     currentImgUrlIndex,
     imgUrls,
-    visualDotCount,
+    maxVisualDotCount,
 }: IPhotoIndexIndicator) => {
-    return imgUrls.length <= visualDotCount ? (
+    return imgUrls.length <= maxVisualDotCount ? (
         <div className={classes.root}>{renderPhotoIndexIndicator(currentImgUrlIndex, imgUrls)}</div>
     ) : (
-        <div className={classes.root}>{PhotoIndexIndicatorAbove5(currentImgUrlIndex, imgUrls)}</div>
+        <div className={classes.root}>
+            {PhotoIndexIndicatorPastLimit(currentImgUrlIndex, imgUrls)}
+        </div>
     );
 };
 

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import arrow from '../../assets/scroll-arrow.svg';
-import ScrollButton from '../scrollButton/ScrollButton';
 import PhotoIndexIndicator from '../photoIndexIndicator/PhotoIndexIndicator';
 import { st, classes } from './ImageContainer.st.css';
+import Icon from '../icon/Icon';
 
 interface IImageContainerProps {
     imgUrls: string[];
@@ -26,16 +26,13 @@ const ImageContainer = ({ imgUrls }: IImageContainerProps) => {
                         scrollImg(false);
                     }}
                 >
-                    <ScrollButton
-                        className={st(classes.arrow, { direction: 'left' })}
-                        svgPath={arrow}
-                    />
+                    <Icon className={st(classes.arrow, { direction: 'left' })} img={arrow} />
                 </div>
 
                 <PhotoIndexIndicator
                     imgUrls={imgUrls}
                     currentImgUrlIndex={currentImgUrlIndex}
-                    visualDotCount={10}
+                    maxVisualDotCount={10}
                 />
 
                 <div
@@ -43,10 +40,7 @@ const ImageContainer = ({ imgUrls }: IImageContainerProps) => {
                         scrollImg(true);
                     }}
                 >
-                    <ScrollButton
-                        className={st(classes.arrow, { direction: 'right' })}
-                        svgPath={arrow}
-                    />
+                    <Icon className={st(classes.arrow, { direction: 'right' })} img={arrow} />
                 </div>
             </div>
         </div>

@@ -1,10 +1,10 @@
 import UserName from '../username/Username';
 import ProfilePicture from '../profilePicture/ProfilePicture';
-import { MOCK_DATA } from '../../mockData';
 import { classes } from './PostDescription.st.css';
 import { classes as generalClasses } from '../../style/general.st.css';
 import type { PostData, User } from '../../types';
 import { memo } from 'react';
+import { MOCK_DATA } from '../../mock-data';
 
 interface IPostDescription {
     owner: User;

@@ -1,3 +1,3 @@
 export const getBoolean = () => {
-    return [true, false][Math.floor(Math.random() * 2)];
+    return Math.random() < 0.5;
 };

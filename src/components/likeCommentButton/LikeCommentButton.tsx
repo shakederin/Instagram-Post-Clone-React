@@ -2,26 +2,20 @@ import Icon from '../icon/Icon';
 import heart from '../../assets/heart.svg';
 import redHeart from '../../assets/red-heart.svg';
 import { classes } from './LikeCommentButton.st.css';
-import type { LikeComment } from '../../types';
 
 interface ILikeCommentButton {
-    userName: string;
-    id: string;
-    LikedBy: string[];
-    likeComment: LikeComment;
+    isLiked: boolean;
+    likeClicked: () => void;
 }
-const LikeCommentButton = ({ userName, id, LikedBy, likeComment }: ILikeCommentButton) => {
+const LikeCommentButton = ({ isLiked, likeClicked }: ILikeCommentButton) => {
     return (
         <div
             className={classes.root}
             onClick={() => {
-                likeComment(id, userName);
+                likeClicked();
             }}
         >
-            <Icon
-                img={LikedBy.indexOf(userName) !== -1 ? redHeart : heart}
-                className={classes.likeCommentButton}
-            />
+            <Icon img={isLiked ? redHeart : heart} className={classes.likeCommentButton} />
         </div>
     );
 };

@@ -12,7 +12,6 @@ const LikeContainer = () => {
     });
 
     const likePost = (user: User) => {
-        console.log(usersWhoLiked);
         const mutateState = { ...usersWhoLiked };
         mutateState.hasOwnProperty(user.userName)
             ? delete mutateState[user.userName]

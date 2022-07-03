@@ -1,11 +1,12 @@
+import { memo, useState } from 'react';
 import UserName from '../username/Username';
+import { getBoolean } from '../../utils/getBoolean';
 import CommentInfo from '../commentInfo/CommentInfo';
 import ProfilePicture from '../profilePicture/ProfilePicture';
-import CommentContent from '../commentContent/CommentContent';
 import LikeCommentButton from '../likeCommentButton/LikeCommentButton';
 import { classes } from './Comment.st.css';
+import { classes as generalClasses } from '../../style/general.st.css';
 import type { Comment as CommentType } from '../../types';
-import { getBoolean } from '../../utils/getBoolean';
 
 interface IComment extends CommentType {}
 
@@ -16,24 +17,27 @@ const Comment = ({
     LikedBy,
     likeComment,
     id,
-}: IComment) => (
-    <li className={classes.root}>
-        <div className={classes.comment}>
-            <ProfilePicture src={profilePicture} story={getBoolean()} />
-            <div className={classes.commentText}>
-                <div>
-                    <UserName userName={userName} header={false} />
-                    <CommentContent content={content} />
+}: IComment) => {
+    const [isLiked, setIsliked] = useState<boolean>(false);
+    const likeClicked = () => {
+        likeComment(id);
+        setIsliked(!isLiked);
+    };
+
+    return (
+        <li className={classes.root}>
+            <div className={classes.comment}>
+                <ProfilePicture src={profilePicture} story={getBoolean()} />
+                <div className={classes.commentText}>
+                    <div>
+                        <UserName userName={userName} header={false} />
+                        <span className={generalClasses.text}>{content}</span>
+                    </div>
+                    <CommentInfo creationDate={creationDate} LikedBy={LikedBy} />
                 </div>
-                <CommentInfo creationDate={creationDate} LikedBy={LikedBy} />
             </div>
-        </div>
-        <LikeCommentButton
-            likeComment={likeComment}
-            id={id}
-            userName={userName}
-            LikedBy={LikedBy}
-        />
-    </li>
-);
-export default Comment;
+            <LikeCommentButton isLiked={isLiked} likeClicked={likeClicked} />
+        </li>
+    );
+};
+export default memo(Comment);
