@@ -2,7 +2,7 @@ import { st, classes } from './LikedByContainer.st.css';
 import { classes as generalClasses } from '../../style/general.st.css';
 import type { User } from '../../types';
 import { PROFILE_PICTURE_ALT } from '../../constants';
-import { SAMPLE_PROFILE_PICTURES } from '../../mockData';
+import { SAMPLE_PROFILE_PICTURES } from '../../mock-data';
 
 export const renderPhotos = (allUsers: User[]) => {
     return (
