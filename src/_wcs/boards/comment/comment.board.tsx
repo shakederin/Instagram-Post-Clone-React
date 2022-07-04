@@ -8,8 +8,8 @@ export default createBoard({
         <Comment
             content={'Nice Photo Man!'}
             creationDate={Date.now()}
-            likeComment={() => {}}
-            LikedBy={['Barak Obama']}
+            likeComment={() => { }}
+            LikedBy={['you']}
             user={{
                 userName: 'Barak Obama',
                 profilePicture:

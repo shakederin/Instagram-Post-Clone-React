@@ -5,7 +5,7 @@ import LikeCommentButton from './../../../components/likeCommentButton/LikeComme
 export default createBoard({
     name: 'LikeCommentButton active',
     Board: () => (
-        <LikeCommentButton likeComment={() => {}} LikedBy={['barak']} userName={'barak'} id={''} />
+        <LikeCommentButton likeComment={() => { }} LikedBy={['barak']} userName={'barak'} id={''} isLiked={true} />
     ),
     environmentProps: {
         canvasWidth: 17,
