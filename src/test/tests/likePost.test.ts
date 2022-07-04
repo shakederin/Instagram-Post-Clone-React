@@ -49,7 +49,7 @@ describe('Like post', () => {
                 await likePostDriver.getLikeByProfilePictureCount();
             expect(profilePictureCountAfterClick).to.equal(profilePictureCount + 1);
         });
-        it.only('Tell that you liked the post', async () => {
+        it('Tell that you liked the post', async () => {
             const likePostDriver = new LikePostDriver(page);
             const stringOptions = ['other', 'others'];
             const likedByTextBeforeLike = await likePostDriver.getLikeByText();

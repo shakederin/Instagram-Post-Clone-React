@@ -16,7 +16,7 @@ const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => {
         <div className={classes.root}>
             <div className={classes.likeByWho}>
                 {renderPhotos(allUsers)}
-                <div className={st(classes.likeContentContainer, generalClasses.text)}>
+                <div className={classes.likeContentContainer}>
                     <span>{LIKED_BY}</span>
                     <span className={st(generalClasses.boldText, generalClasses.text)}>
                         {allUsers.length > 1 ? (
