@@ -5,14 +5,14 @@ import { classes } from './LikeCommentButton.st.css';
 
 interface ILikeCommentButton {
     isLiked: boolean;
-    likeClicked: () => void;
+    likeComment: () => void;
 }
-const LikeCommentButton = ({ isLiked, likeClicked }: ILikeCommentButton) => {
+const LikeCommentButton = ({ isLiked, likeComment }: ILikeCommentButton) => {
     return (
         <div
             className={classes.root}
             onClick={() => {
-                likeClicked();
+                likeComment();
             }}
         >
             <Icon img={isLiked ? redHeart : heart} className={classes.likeCommentButton} />

@@ -1,13 +1,13 @@
 import Comment from '../comment/Comment';
 import { classes } from './CommentsList.st.css';
-import type { Comment as IComment, LikeComment } from '../../types';
+import type { Comment as IComment, AddLikeToComment } from '../../types';
 
 interface ICommentListProps {
     comments: IComment[];
-    likeComment: LikeComment;
+    addLikeToComment: AddLikeToComment;
 }
 
-const CommentsList = ({ comments, likeComment }: ICommentListProps) => (
+const CommentsList = ({ comments, addLikeToComment }: ICommentListProps) => (
     <ul className={classes.root}>
         {comments.map(({ user, creationDate, content, LikedBy, id }) => (
             <Comment
@@ -15,7 +15,7 @@ const CommentsList = ({ comments, likeComment }: ICommentListProps) => (
                 creationDate={creationDate}
                 content={content}
                 LikedBy={LikedBy}
-                likeComment={likeComment}
+                addLikeToComment={addLikeToComment}
                 key={id}
                 id={id}
             />

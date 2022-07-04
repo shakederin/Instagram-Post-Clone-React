@@ -2,12 +2,12 @@ import { MOCK_DATA } from '../../mock-data';
 import { AND, LIKED_BY, OTHER, OTHERS } from '../../constants';
 import { st, classes } from './LikedByContainer.st.css';
 import { classes as generalClasses } from '../../style/general.st.css';
-import type { IinisialState } from '../../types';
+import type { IinitialState } from '../../types';
 import { renderPhotos } from './helpers';
 
 const { SAMPLE_HOURS_AGO } = MOCK_DATA;
 interface ILikedByContainer {
-    allUsersWhoLiked: IinisialState;
+    allUsersWhoLiked: IinitialState;
 }
 
 const LikedByContainer = ({ allUsersWhoLiked }: ILikedByContainer) => {

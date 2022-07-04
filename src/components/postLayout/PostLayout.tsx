@@ -6,6 +6,7 @@ import PostReactionContainer from '../postReactionContainer/PostReactionContaine
 import { classes } from './PostLayout.st.css';
 import type { PostData, User, Comment } from '../../types';
 import { getRandomUser } from '../../utils/getRandomUser';
+import { YOU } from '../../constants';
 
 interface IPostLayoutProps {
     owner: User;
@@ -22,20 +23,20 @@ const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
             content: comment,
             creationDate: Date.now(),
             LikedBy: [],
-            likeComment,
+            addLikeToComment,
             id: Math.random().toString(16).slice(2),
         };
         setComments((precomments) => [...precomments, newComment]);
     }, []);
 
-    const likeComment = useCallback(
+    const addLikeToComment = useCallback(
         (id: string) => {
             const newState = [...comments];
             for (const comment of newState) {
                 if (comment.id === id) {
-                    const indexOfUserName = comment.LikedBy.indexOf(owner.userName);
+                    const indexOfUserName = comment.LikedBy.indexOf(YOU);
                     indexOfUserName === -1
-                        ? comment.LikedBy.push(owner.userName)
+                        ? comment.LikedBy.push(YOU)
                         : comment.LikedBy.splice(indexOfUserName, 1);
                 }
             }
@@ -48,7 +49,7 @@ const PostLayout = ({ owner, postData }: IPostLayoutProps) => {
         <div className={classes.root}>
             <PostHeader owner={owner} />
             <PostDescription owner={owner} postData={postData} />
-            <CommentsList comments={comments} likeComment={likeComment} />
+            <CommentsList comments={comments} addLikeToComment={addLikeToComment} />
             <PostReactionContainer onCommentSubmit={addComment} />
         </div>
     );

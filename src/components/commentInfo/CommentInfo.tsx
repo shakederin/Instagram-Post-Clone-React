@@ -32,13 +32,9 @@ const CommentInfo = ({ creationDate, LikedBy }: ICommentInfo) => {
         <div className={classes.root}>
             <div className={classes.commentInfo}>
                 <div className={classes.infoSubtitle}>{timeAgo}</div>
-                {LikedBy.length > 0 ? (
-                    <div className={classes.infoSubtitle}>
-                        {LikedBy.length} {LIKE}
-                    </div>
-                ) : (
-                    <div className={classes.infoSubtitle}>{LIKE}</div>
-                )}
+                <div className={classes.infoSubtitle}>
+                    {LikedBy.length > 0 ? `${LikedBy.length} ${LIKE}` : LIKE}
+                </div>
                 <div className={classes.infoSubtitle}>{REPLY}</div>
             </div>
         </div>

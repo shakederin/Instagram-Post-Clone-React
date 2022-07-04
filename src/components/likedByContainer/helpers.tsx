@@ -5,6 +5,7 @@ import { PROFILE_PICTURE_ALT } from '../../constants';
 import { SAMPLE_PROFILE_PICTURES } from '../../mock-data';
 
 export const renderPhotos = (allUsers: User[]) => {
+    // To avoid the use of z-index, I rendered the first profile picture last, and the natural behavioral make them stack
     return (
         <div className={classes.UserLikeByPic}>
             {allUsers.slice(1, 3).map((user) => {

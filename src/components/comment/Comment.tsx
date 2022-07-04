@@ -1,6 +1,6 @@
 import { memo, useState } from 'react';
 import UserName from '../username/Username';
-import { getBoolean } from '../../utils/getBoolean';
+import { getRandomBoolean } from '../../utils/getBoolean';
 import CommentInfo from '../commentInfo/CommentInfo';
 import ProfilePicture from '../profilePicture/ProfilePicture';
 import LikeCommentButton from '../likeCommentButton/LikeCommentButton';
@@ -15,19 +15,19 @@ const Comment = ({
     content,
     creationDate,
     LikedBy,
-    likeComment,
+    addLikeToComment,
     id,
 }: IComment) => {
     const [isLiked, setIsliked] = useState<boolean>(false);
-    const likeClicked = () => {
-        likeComment(id);
+    const likeComment = () => {
+        addLikeToComment(id);
         setIsliked(!isLiked);
     };
 
     return (
         <li className={classes.root}>
             <div className={classes.comment}>
-                <ProfilePicture src={profilePicture} story={getBoolean()} />
+                <ProfilePicture src={profilePicture} story={getRandomBoolean()} />
                 <div className={classes.commentText}>
                     <div>
                         <UserName userName={userName} header={false} />
@@ -36,7 +36,7 @@ const Comment = ({
                     <CommentInfo creationDate={creationDate} LikedBy={LikedBy} />
                 </div>
             </div>
-            <LikeCommentButton isLiked={isLiked} likeClicked={likeClicked} />
+            <LikeCommentButton isLiked={isLiked} likeComment={likeComment} />
         </li>
     );
 };
