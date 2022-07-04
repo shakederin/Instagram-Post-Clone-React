@@ -1,6 +1,7 @@
 import { classes } from './UserName.st.css';
 import { classes as generalClasses } from '../../style/general.st.css';
 import { FOLLOWING } from '../../constants';
+import { memo } from 'react';
 
 interface IUserName {
     userName: string;
@@ -20,4 +21,4 @@ const UserName = ({ userName, header }: IUserName) => (
     </>
 );
 
-export default UserName;
+export default memo(UserName);

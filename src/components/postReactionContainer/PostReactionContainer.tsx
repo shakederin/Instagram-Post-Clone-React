@@ -1,9 +1,11 @@
+import { memo } from 'react';
+import type { OnSubmit } from '../../types';
 import InputForm from '../inputForm/InputForm';
 import LikeContainer from '../likeContainer/LikeContainer';
 import { classes } from './PostReactionContainer.st.css';
 
 interface IPostReactionContainer {
-    onCommentSubmit: (content: string) => void;
+    onCommentSubmit: OnSubmit;
 }
 const PostReactionContainer = ({ onCommentSubmit }: IPostReactionContainer) => (
     <div className={classes.root}>
@@ -12,4 +14,4 @@ const PostReactionContainer = ({ onCommentSubmit }: IPostReactionContainer) => (
     </div>
 );
 
-export default PostReactionContainer;
+export default memo(PostReactionContainer);

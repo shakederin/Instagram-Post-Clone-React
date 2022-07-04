@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { classes as generalClasses } from '../../style/general.st.css';
 
 const SharePostIcon = () => (
@@ -31,4 +32,4 @@ const SharePostIcon = () => (
     </svg>
 );
 
-export default SharePostIcon;
+export default memo(SharePostIcon);

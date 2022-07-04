@@ -1,8 +1,9 @@
-.root{}
+.root {}
 
 .infoSubtitle {
   margin-right: 1em;
 }
+
 .commentInfo {
   display: flex;
   margin-top: 1em;
