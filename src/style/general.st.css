@@ -32,6 +32,16 @@
   box-sizing: border-box;
 }
 
+.profilePictureWithNoStory {
+  height: 2em;
+  width: 2em;
+  margin-left: 0.5em;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3.5px solid white;
+
+}
+
 .boldText {
   font-weight: bold;
 }

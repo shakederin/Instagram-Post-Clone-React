@@ -1,5 +1,5 @@
 import InstagramPost from './components/instagramPost/InstagramPost';
-import { MOCK_DATA, POST_IMAGES, SAMPLE_PROFILE_PICTURES } from './mockData';
+import { MOCK_DATA, POST_IMAGES, SAMPLE_PROFILE_PICTURES } from './mock-data';
 import { classes } from './style/general.st.css';
 
 const owner = {

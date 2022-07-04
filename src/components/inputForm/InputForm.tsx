@@ -5,30 +5,20 @@ import { getRandomUser } from '../../utils/getRandomUser';
 import { PLACE_HOLDER, POST } from '../../constants';
 import { st, classes as generalClasses } from '../../style/general.st.css';
 import { classes } from './InputForm.st.css';
-import type { LikeComment, OnSubmit } from '../../types';
+import type { OnSubmit } from '../../types';
 
 interface IInputForm {
-    likeComment: LikeComment;
     onSubmit: OnSubmit;
 }
 
-const InputForm = ({ likeComment, onSubmit }: IInputForm) => {
+const InputForm = ({ onSubmit }: IInputForm) => {
     const inputElement = useRef<HTMLInputElement>(null);
     const formElement = useRef<HTMLFormElement>(null);
     const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         if (inputElement.current instanceof HTMLInputElement && inputElement.current.value.trim()) {
-            const randomUser = getRandomUser();
-            const newComment = {
-                user: randomUser,
-                content: inputElement.current.value,
-                creationDate: Date.now(),
-                LikedBy: [],
-                likeComment,
-                id: Math.random().toString(16).slice(2),
-            };
-            onSubmit(newComment);
+            onSubmit(inputElement.current.value);
         }
         formElement.current?.reset();
     };

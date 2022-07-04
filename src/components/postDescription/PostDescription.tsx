@@ -1,9 +1,10 @@
 import UserName from '../username/Username';
 import ProfilePicture from '../profilePicture/ProfilePicture';
-import { MOCK_DATA } from '../../mockData';
 import { classes } from './PostDescription.st.css';
 import { classes as generalClasses } from '../../style/general.st.css';
 import type { PostData, User } from '../../types';
+import { memo } from 'react';
+import { MOCK_DATA } from '../../mock-data';
 
 interface IPostDescription {
     owner: User;
@@ -11,12 +12,12 @@ interface IPostDescription {
 }
 const PostDescription = ({
     owner: { userName, profilePicture },
-    postData: { creationDate, description },
+    postData: { description },
 }: IPostDescription) => {
     return (
         <div className={classes.root}>
             <div className={classes.postTitle}>
-                <ProfilePicture src={profilePicture} />
+                <ProfilePicture src={profilePicture} story={true} />
                 <div className={classes.commentText}>
                     <div>
                         <UserName userName={userName} header={false} />
@@ -31,4 +32,4 @@ const PostDescription = ({
     );
 };
 
-export default PostDescription;
+export default memo(PostDescription);

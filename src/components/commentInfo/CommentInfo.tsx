@@ -9,14 +9,7 @@ interface ICommentInfo {
 }
 
 const CommentInfo = ({ creationDate, LikedBy }: ICommentInfo) => {
-    const SecondsPassedFromCreation = Math.floor((Date.now() - creationDate) / 1000);
-    const timePastFromCreation =
-        SecondsPassedFromCreation > 3599
-            ? `${Math.floor(SecondsPassedFromCreation / 3600)} h`
-            : SecondsPassedFromCreation > 59
-                ? `${Math.floor(SecondsPassedFromCreation / 60)} m`
-                : `${SecondsPassedFromCreation} s`;
-    const [timeAgo, setTimeAgo] = useState<string>(timePastFromCreation);
+    const [timeAgo, setTimeAgo] = useState<string>(getTimeAgo(creationDate));
 
     useEffect(() => {
         const secondesInterval = setInterval(updateTimeAgo, FIVE_SECONDS);
@@ -39,13 +32,9 @@ const CommentInfo = ({ creationDate, LikedBy }: ICommentInfo) => {
         <div className={classes.root}>
             <div className={classes.commentInfo}>
                 <div className={classes.infoSubtitle}>{timeAgo}</div>
-                {LikedBy.length > 0 ? (
-                    <div className={classes.infoSubtitle}>
-                        {LikedBy.length} {LIKE}
-                    </div>
-                ) : (
-                    <div className={classes.infoSubtitle}>{LIKE}</div>
-                )}
+                <div className={classes.infoSubtitle}>
+                    {LikedBy.length > 0 ? `${LikedBy.length} ${LIKE}` : LIKE}
+                </div>
                 <div className={classes.infoSubtitle}>{REPLY}</div>
             </div>
         </div>
