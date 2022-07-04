@@ -7,10 +7,10 @@ import { classes } from './PostReactionContainer.st.css';
 interface IPostReactionContainer {
     onCommentSubmit: OnSubmit;
 }
-const PostReactionContainer = ({ likeComment, onCommentSubmit }: IPostReactionContainer) => (
+const PostReactionContainer = ({ onCommentSubmit }: IPostReactionContainer) => (
     <div className={classes.root}>
         <LikeContainer />
-        <InputForm onSubmit={onCommentSubmit} likeComment={likeComment} />
+        <InputForm onSubmit={onCommentSubmit} />
     </div>
 );
 
