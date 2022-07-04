@@ -1,0 +1,21 @@
+name: Check Instagram-post-clone
+on: [pull_request, push, commit]
+
+jobs:
+ strategy:
+      matrix:
+        version: [16]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+  runs-on: ${{ matrix.os }}
+  Check Instagram-post-clone:
+    name: Check Instagram-post-clone
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.version }}
+      - run: npm ci
+      - run: npm run start
+      - run: npm run test
+      
+
