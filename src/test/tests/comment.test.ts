@@ -58,14 +58,14 @@ describe('Comment check', () => {
     });
     context('Time past sinse creation', () => {
         const ATimeStemp = ['s', 'm', 'h'];
-        it.only('show time past since creation', async () => {
+        it('show time past since creation', async () => {
             const commentDriver = new CommentDriver(page);
             const timePast = Number((await commentDriver.getCommentsTimeAgo()).split(' ')[0]);
             const timestemp = (await commentDriver.getCommentsTimeAgo()).split(' ')[1];
             expect(timePast, 'time past is not correct').to.equal(0);
             expect(ATimeStemp, 'time stemp is not correct').to.include(timestemp);
         });
-        it.only('see if time past since creation changed', async () => {
+        it('see if time past since creation changed', async () => {
             const commentDriver = new CommentDriver(page);
             const timestemp = (await commentDriver.getCommentsTimeAgo()).split(' ')[1];
 
