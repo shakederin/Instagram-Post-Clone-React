@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { classes as generalClasses } from '../../style/general.st.css';
 
 const CommentIcon = () => (
@@ -21,4 +22,4 @@ const CommentIcon = () => (
     </svg>
 );
 
-export default CommentIcon;
+export default memo(CommentIcon);

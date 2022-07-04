@@ -29,7 +29,7 @@ export const renderPhotoIndexIndicator = (currentImgUrlIndex: number, imgUrls: s
             : createNormalDot(Math.random().toString(16).slice(2))
     );
 
-export const PhotoIndexIndicatorAbove5 = (currentImgUrlIndex: number, imgUrls: string[]) => {
+export const PhotoIndexIndicatorPastLimit = (currentImgUrlIndex: number, imgUrls: string[]) => {
     const photoArray = [];
     const specialCases = [0, 1, imgUrls.length - 2, imgUrls.length - 1];
     for (let i = 0; i < 5; i++) {

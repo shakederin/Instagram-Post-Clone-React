@@ -8,9 +8,9 @@ export interface PostData {
     creationDate: Date;
 }
 
-export type LikeComment = (id: string, userName: string) => void;
+export type AddLikeToComment = (id: string) => void;
 
-export type OnSubmit = (comment: Comment) => void;
+export type OnSubmit = (comment: string) => void;
 
 export interface Comment {
     id: string;
@@ -18,5 +18,9 @@ export interface Comment {
     content: string;
     creationDate: number;
     LikedBy: string[];
-    likeComment: LikeComment;
+    addLikeToComment: AddLikeToComment;
+}
+
+export interface IinitialState {
+    [key: string]: User;
 }

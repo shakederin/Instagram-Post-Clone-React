@@ -2,6 +2,7 @@ export const MOCK_DATA = {
     SAMPLE_DATE: new Date(),
     SAMPLE_USER_NAME: 'tonytoscani',
     SAMPLE_HOURS_AGO: '18 HOURS AGO',
+    SAMPLE_NAME: 'yonni',
     SAMPLE_POST_DESCRIPTION: 'me, at the sunrise',
     SAMPLE_TIME_PASSED_FROM_CREATION_DATE: '3 d',
 };
