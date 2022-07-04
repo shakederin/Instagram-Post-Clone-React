@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import Icon from '../icon/Icon';
 import smileSVG from '../../assets/smile.svg';
-import { getRandomUser } from '../../utils/getRandomUser';
 import { PLACE_HOLDER, POST } from '../../constants';
 import { st, classes as generalClasses } from '../../style/general.st.css';
 import { classes } from './InputForm.st.css';

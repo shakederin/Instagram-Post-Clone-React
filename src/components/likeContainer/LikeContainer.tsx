@@ -21,7 +21,7 @@ const LikeContainer = () => {
 
     return (
         <div className={classes.root}>
-            <PostActionBar likePost={() => {}} />
+            <PostActionBar likePost={likePost} />
             <LikedByContainer allUsersWhoLiked={usersWhoLiked} />
         </div>
     );
