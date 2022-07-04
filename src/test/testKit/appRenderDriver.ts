@@ -63,7 +63,6 @@ export class appRenderDriver {
         this.commentList = page.locator(COMMENTS_LIST);
         this.PostActionBar = page.locator(POST_REACTION_BAR);
         this.LikedByContainer = page.locator(LIKE_BY_CONTAINER);
-
         this.InputForm = page.locator(COMMENT_INPUT);
         this.postComment = page.locator(POST_COMMENT_BUTTON);
     }
@@ -119,6 +118,7 @@ export class appRenderDriver {
     isEllipsis() {
         return this.isElementRendered(this.ellipsis);
     }
+
     isDescriptionProfilePicture() {
         return this.isElementRendered(this.descriptionProfilePicture);
     }

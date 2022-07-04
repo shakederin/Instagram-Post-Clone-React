@@ -89,14 +89,35 @@ describe('Render app', async () => {
                 ).to.be.true;
             });
         });
-        it('Render comment list element', () => {});
+        context('Render comment list element', () => {
+            it('Render comment list element', async () => {
+                const renderAppDriver = new appRenderDriver(page);
+                expect(await renderAppDriver.isCommentsList(), 'comment list element not rendered')
+                    .to.be.true;
+            });
+        });
         context('Render post reply area', () => {
-            it('Render the reaction icons bar', () => {});
-            it('Render the like by container    ', () => {});
+            it('Render the reaction icons bar', async () => {
+                const renderAppDriver = new appRenderDriver(page);
+                expect(await renderAppDriver.isPostActionBar(), 'reaction icons bar not rendered')
+                    .to.be.true;
+            });
+            it('Render the like by container', async () => {
+                const renderAppDriver = new appRenderDriver(page);
+                expect(await renderAppDriver.isLikedByContainer(), 'like by container not rendered')
+                    .to.be.true;
+            });
         });
         context('Render post form', () => {
-            it('Render the input element', () => {});
-            it('Render the post comment button', () => {});
+            it('Render the input element', async () => {
+                const renderAppDriver = new appRenderDriver(page);
+                expect(await renderAppDriver.isInputForm(), 'form input not rendered').to.be.true;
+            });
+            it('Render the post comment button', async () => {
+                const renderAppDriver = new appRenderDriver(page);
+                expect(await renderAppDriver.isPostComment(), 'post comment button not rendered').to
+                    .be.true;
+            });
         });
     });
 });

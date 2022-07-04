@@ -20,6 +20,9 @@ export const POST_DESCRIPTION_USERNAME =
 
 export const COMMENTS_LIST = '.CommentsList2121272815__root';
 export const COMMENTS = '.Comment2902221491__root';
+export const COMMENT_LIKE_BUTTON =
+    '.Comment2902221491__root >> nth=0 >> .LikeCommentButton1869561300__likeCommentButton';
+export const COMMENT_INFO = '.Comment2902221491__root >> .CommentInfo2447862186__infoSubtitle';
 
 export const POST_REACTION_CONTAINER = '.PostReactionContainer1320450926__root';
 export const POST_REACTION_BAR = '.PostActionBar3158866249__root';
